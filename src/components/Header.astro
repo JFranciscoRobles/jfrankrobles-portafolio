@@ -1,0 +1,55 @@
+---
+import { SITE_TITLE } from "../consts";
+---
+
+<header class="w-full text-white bg-primary md:bg-white">
+  <div
+    class="w-full mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center"
+  >
+    <nav
+      class="hidden md:flex gap-8 justify-center w-fit bg-primary rounded-xl my-8 py-2 px-8"
+    >
+      <a href="/" class="hover:text-gray-300">Inicio</a>
+      <a href="/proyectos" class="hover:text-gray-300">Proyectos</a>
+      <a href="/blog" class="hover:text-gray-300">Blog</a>
+      <a href="/sobre-mi" class="hover:text-gray-300">Sobre mí</a>
+    </nav>
+    <div class="md:hidden flex items-center justify-start w-full h-16">
+      <button id="menu-button" class="text-white focus:outline-none">
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden bg-primary text-white w-full shadow-md"
+  >
+    <nav class="flex flex-col space-y-4 p-4">
+      <a href="/" class="hover:text-gray-300">Inicio</a>
+      <a href="/proyectos" class="hover:text-gray-300">Proyectos</a>
+      <a href="/blog" class="hover:text-gray-300">Blog</a>
+      <a href="/sobre-mi" class="hover:text-gray-300">Sobre mí</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  //@ts-ignore
+  document.getElementById("menu-button").addEventListener("click", function () {
+    const menu = document.getElementById("mobile-menu");
+    //@ts-ignore
+    menu.classList.toggle("hidden");
+  });
+</script>

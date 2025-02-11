@@ -1,0 +1,50 @@
+---
+const skills = [
+  {
+    title: "Webs Administrables con CMS",
+    description:
+      "Desarrollo sitios web administrables utilizando CMS y Headless CMS como Strapi, WordPress y PayloadCMS. Estos sistemas permiten gestionar contenido de manera eficiente sin necesidad de conocimientos técnicos avanzados.",
+    image:
+      "https://images.unsplash.com/photo-1566207462754-97c86c31db3d?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Software a Medida para Empresas",
+    description:
+      "Construyo soluciones digitales a medida, como CRMs y plataformas empresariales, integrando bases de datos, autenticación y optimización de procesos internos para mejorar la eficiencia operativa.",
+    image:
+      "https://images.unsplash.com/photo-1518773553398-650c184e0bb3?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "E-commerce y Catálogos Interactivos",
+    description:
+      "Desarrollo plataformas de e-commerce con búsquedas optimizadas, filtrado avanzado y experiencia de usuario fluida. Utilizo tecnologías como MeiliSearch y AlgoliaJS para mejorar la navegación y conversión.",
+    image:
+      "https://images.unsplash.com/photo-1529071242804-840f9a164b8b?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Sitios Web Profesionales y Optimizados",
+    description:
+      "Diseño y desarrollo sitios web optimizados para velocidad y SEO, asegurando una presencia profesional y efectiva en línea. Implemento buenas prácticas en UI/UX para mejorar la experiencia del usuario.",
+    image:
+      "https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+];
+---
+
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-12 p-6">
+  {
+    skills.map((skill) => (
+      <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-105">
+        <img
+          src={skill.image}
+          alt={skill.title}
+          class="w-full h-48 object-cover"
+        />
+        <div class="p-4">
+          <h3 class="text-lg font-bold mb-2">{skill.title}</h3>
+          <p class="text-gray-600">{skill.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>

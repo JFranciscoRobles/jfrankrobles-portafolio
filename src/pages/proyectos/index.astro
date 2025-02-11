@@ -1,0 +1,94 @@
+---
+import ProyectoCard from "../../components/ProyectoCard.astro";
+import Global from "../../layouts/Global.astro";
+
+const proyectosLaborales = [
+  {
+    title: "Probien Catálogo - Portal Publico",
+    portada: "/probiencms.png",
+    description:
+      "Plataforma web para mostrar propiedades y agentes inmobiliarios con más de 500 páginas estáticas, optimización SEO y diseño responsivo.",
+    features: [
+      "Sitio web de inmobiliaria con diseño y funcionalidad optimizados.",
+      "Búsqueda elástica avanzada para una experiencia de usuario mejorada.",
+      "Implementado con Headless CMS para agilizar el desarrollo.",
+    ],
+    href: "https://www.probien.com.mx/",
+    technologies: [
+      "Next.js",
+      "Payload CMS",
+      "Tailwind CSS",
+      "TypeScript",
+      "InstantSearch.js",
+      "Meilisearch",
+      "Vercel",
+    ],
+  },
+  {
+    title: "Probien CRM",
+    portada: "/ProbienLogo.png",
+    description:
+      "Sistema interno para la gestión integral de una empresa inmobiliaria con más de 18 módulos.",
+    features: [
+      "Plataforma interna para administrar propiedades, clientes y operaciones.",
+      "Optimización de flujos de trabajo y centralización de datos.",
+      "Escalabilidad y seguridad con tecnologías modernas.",
+    ],
+    technologies: [
+      "Next.js",
+      "Tailwind CSS",
+      "Supabase",
+      "Vercel",
+      "Prisma ORM",
+      "InstantSearch.js",
+      "Meilisearch",
+    ],
+  },
+];
+
+const proyectosHobby = [
+  {
+    title: "WebPWizard",
+    portada: "/webpwizard.png",
+    href: "https://www.webpwizard.com/",
+    description:
+      "Convertidor de imágenes a WebP totalmente online y accesible desde el navegador.",
+    features: [
+      "Convierte imágenes a formato WebP de manera rápida y sencilla.",
+      "No requiere instalación ni registro, funciona 100% en el navegador.",
+      "Optimización de imágenes para reducir el tamaño sin perder calidad.",
+    ],
+    technologies: ["Nextjs", "Tailwindcss", "Vercel"],
+  },
+];
+---
+
+<Global pageTitle={"J. Frank Robles - Desarrollador FullStack"}>
+  <main class="flex flex-col w-full items-center p-6 gap-20 max-w-7xl">
+    <h1 class="font-black text-3xl md:text-4xl text-gray-900">
+      Conoce los proyectos en los que he participado
+    </h1>
+
+    <section class="w-full">
+      <h2 class="text-2xl font-bold text-gray-800">Proyectos laborales</h2>
+      <p class="text-gray-600">
+        Proyectos desarrollados para empresas o negocios.
+      </p>
+      <div class="flex flex-col gap-10 my-8">
+        {
+          proyectosLaborales.map((proyecto) => (
+            <ProyectoCard proyecto={proyecto} />
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="w-full">
+      <h2 class="text-2xl font-bold text-gray-800">Proyectos personales</h2>
+      <p class="text-gray-600">Proyectos desarrollados como Hobby.</p>
+      <div class="flex flex-col gap-10 my-8">
+        {proyectosHobby.map((proyecto) => <ProyectoCard proyecto={proyecto} />)}
+      </div>
+    </section>
+  </main>
+</Global>

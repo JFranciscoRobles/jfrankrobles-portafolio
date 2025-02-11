@@ -1,0 +1,50 @@
+---
+const timeline = [
+  {
+    company: "Probien Bienes Exclusivos",
+    title: "Full-Stack Developer",
+    date: "2021 - Actualidad",
+    description: "Real Estate Software",
+    responsibilities: [
+      "Desarrollé un catálogo de propiedades con diversas secciones y categorías utilizando Next.js, Payloadcms, Meilisearch, Elasticsearch, Tailwind, Vercel.",
+      "Desarrollé un CRM para la gestión de la información de la empresa utilizando Next.js, Supabase y MeiliSearch.",
+      "Optimicé la funcionalidad de búsqueda dentro del catálogo de propiedades utilizando Meilisearch.",
+    ],
+  },
+];
+---
+
+<section>
+  <h1 class="font-black text-3xl md:text-4xl text-gray-900">
+    Mi trayectoria profesional
+  </h1>
+  {
+    timeline.map((item) => (
+      <div class="flex flex-col md:flex-row space-y-10 md:space-y-0 space-x-10 my-20 relative border-2 border-gray-200 shadow-lg p-6 rounded-xl">
+        <p class="w-40">{item.date}</p>
+        <div>
+          <h5 class="text-lg md:text-lg lg:text-lg font-extrabold text-emerald-500">
+            {item.company}
+          </h5>
+          <p class="text-base md:text-base lg:text-base font-semibold">
+            {item.title}
+          </p>
+          <p class="text-sm md:text-sm lg:text-sm mb-4">{item.description}</p>
+
+          {item.responsibilities.map((responsibility) => (
+            <div class="flex space-x-1 items-start my-2">
+              <svg
+                class="h-3 w-4 mt-1 text-primary"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm5.707 8.293l-6.364 6.364a1 1 0 01-1.414 0l-3.182-3.182a1 1 0 111.414-1.414l2.475 2.475 5.657-5.657a1 1 0 111.414 1.414z" />
+              </svg>
+              <p class="text-sm md:text-sm lg:text-sm">{responsibility}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))
+  }
+</section>
