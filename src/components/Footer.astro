@@ -1,5 +1,6 @@
 ---
 import { SOCIAL_LINKS, SITE_AUTHOR } from "../consts";
+import { localizePath } from "astro-i18next";
 import { t } from "i18next";
 ---
 
@@ -19,18 +20,23 @@ import { t } from "i18next";
         <h3 class="text-lg font-semibold mb-4">{t("footer.navigation")}</h3>
         <ul class="space-y-2">
           <li>
-            <a href="/" class="text-gray-400 hover:text-white transition">
+            <a href={localizePath("/")} class="text-gray-400 hover:text-white transition">
               {t("nav.home")}
             </a>
           </li>
           <li>
-            <a href="/proyectos" class="text-gray-400 hover:text-white transition">
-              {t("nav.projects")}
+            <a href={localizePath("/ingenieria")} class="text-gray-400 hover:text-white transition">
+              {t("nav.engineering")}
             </a>
           </li>
           <li>
-            <a href="/sobre-mi" class="text-gray-400 hover:text-white transition">
-              {t("nav.about")}
+            <a href={localizePath("/negocios")} class="text-gray-400 hover:text-white transition">
+              {t("nav.business")}
+            </a>
+          </li>
+          <li>
+            <a href={localizePath("/proyectos")} class="text-gray-400 hover:text-white transition">
+              {t("nav.projects")}
             </a>
           </li>
         </ul>

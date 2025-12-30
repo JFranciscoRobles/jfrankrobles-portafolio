@@ -24,19 +24,19 @@ import { localizePath } from "astro-i18next";
 
         <p class="mt-4 text-lg text-gray-600 leading-relaxed" set:html={t("home.description2")} />
 
-        <!-- CTAs -->
+        <!-- CTAs para ambas audiencias -->
         <div class="flex flex-wrap gap-4 mt-8">
           <a
-            href={localizePath("/proyectos")}
+            href={localizePath("/ingenieria")}
             class="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 font-semibold transition shadow-lg hover:shadow-xl"
           >
-            {t("home.viewProjects")}
+            {t("home.viewEngineering")}
           </a>
           <a
-            href="mailto:josefrancisco.roblesacosta@gmail.com"
+            href={localizePath("/negocios")}
             class="bg-white text-gray-900 border-2 border-gray-200 px-8 py-3 rounded-lg hover:border-primary hover:text-primary font-semibold transition"
           >
-            {t("home.contact")}
+            {t("home.viewBusiness")}
           </a>
         </div>
 
@@ -111,13 +111,72 @@ import { localizePath } from "astro-i18next";
           <div class="relative">
             <img
               src="/yo.jpg"
-              alt="J. Francisco Robles - Desarrollador Full-Stack"
+              alt="J. Francisco Robles - Software Architect"
               width="400"
               height="400"
               class="relative rounded-2xl object-cover shadow-2xl w-full max-w-md"
             />
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sección "¿A quién ayudo?" -->
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+      {t("home.whoIHelp")}
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Tarjeta para Reclutadores/Empresas -->
+      <div class="group relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 border-2 border-gray-200 hover:border-primary">
+        <div class="mb-4">
+          <svg class="w-12 h-12 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900 mb-3">
+          {t("home.forRecruiters")}
+        </h3>
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          {t("home.forRecruitersDesc")}
+        </p>
+        <a
+          href={localizePath("/ingenieria")}
+          class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
+        >
+          {t("home.viewProfile")}
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Tarjeta para Negocios -->
+      <div class="group relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 border-2 border-gray-200 hover:border-primary">
+        <div class="mb-4">
+          <svg class="w-12 h-12 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900 mb-3">
+          {t("home.forBusiness")}
+        </h3>
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          {t("home.forBusinessDesc")}
+        </p>
+        <a
+          href={localizePath("/negocios")}
+          class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
+        >
+          {t("home.viewServices")}
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
       </div>
     </div>
   </div>

@@ -6,6 +6,8 @@ export default {
     en: {
       "sobre-mi": "about-me",
       "proyectos": "projects",
+      "ingenieria": "engineering",
+      "negocios": "business",
     },
   },
 };

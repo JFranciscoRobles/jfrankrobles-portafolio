@@ -20,18 +20,21 @@ import { t } from "i18next";
         <a href={localizePath("/")} class="text-gray-700 hover:text-primary font-medium transition">
           {t("nav.home")}
         </a>
+        <a href={localizePath("/ingenieria")} class="text-gray-700 hover:text-primary font-medium transition">
+          {t("nav.engineering")}
+        </a>
+        <a href={localizePath("/negocios")} class="text-gray-700 hover:text-primary font-medium transition">
+          {t("nav.business")}
+        </a>
         <a href={localizePath("/proyectos")} class="text-gray-700 hover:text-primary font-medium transition">
           {t("nav.projects")}
-        </a>
-        <a href={localizePath("/sobre-mi")} class="text-gray-700 hover:text-primary font-medium transition">
-          {t("nav.about")}
         </a>
         <LanguagePicker />
         <a
           href="mailto:josefrancisco.roblesacosta@gmail.com"
           class="bg-primary text-white px-5 py-2 rounded-lg hover:bg-primary/90 font-medium transition shadow-sm"
         >
-          {t("home.contact")}
+          {t("nav.contact")}
         </a>
       </div>
 
@@ -70,16 +73,22 @@ import { t } from "i18next";
           {t("nav.home")}
         </a>
         <a
+          href={localizePath("/ingenieria")}
+          class="text-gray-700 hover:text-primary hover:bg-gray-50 px-3 py-2 rounded-lg font-medium transition"
+        >
+          {t("nav.engineering")}
+        </a>
+        <a
+          href={localizePath("/negocios")}
+          class="text-gray-700 hover:text-primary hover:bg-gray-50 px-3 py-2 rounded-lg font-medium transition"
+        >
+          {t("nav.business")}
+        </a>
+        <a
           href={localizePath("/proyectos")}
           class="text-gray-700 hover:text-primary hover:bg-gray-50 px-3 py-2 rounded-lg font-medium transition"
         >
           {t("nav.projects")}
-        </a>
-        <a
-          href={localizePath("/sobre-mi")}
-          class="text-gray-700 hover:text-primary hover:bg-gray-50 px-3 py-2 rounded-lg font-medium transition"
-        >
-          {t("nav.about")}
         </a>
         <div class="px-3">
           <LanguagePicker />
@@ -88,7 +97,7 @@ import { t } from "i18next";
           href="mailto:josefrancisco.roblesacosta@gmail.com"
           class="bg-primary text-white px-3 py-2 rounded-lg hover:bg-primary/90 font-medium transition text-center"
         >
-          {t("home.contact")}
+          {t("nav.contact")}
         </a>
       </div>
     </div>
