@@ -1,0 +1,111 @@
+---
+import { localizePath } from "astro-i18next";
+import config from "../../astro-i18next.config";
+
+const currentPath = Astro.url.pathname;
+const currentLang = currentPath.startsWith("/en") ? "en" : "es";
+
+// Get route translations from config
+const routeTranslations = config.routes?.en || {};
+
+// Create reverse mapping (en -> es)
+const reverseTranslations: Record<string, string> = Object.fromEntries(
+  Object.entries(routeTranslations).map(([es, en]) => [en, es]),
+);
+
+// Get the path without the language prefix
+let pathWithoutLang =
+  currentLang === "en" ? currentPath.replace(/^\/en\//, "/") : currentPath;
+
+// If we're in English, we need to reverse-translate to get the Spanish base path
+if (currentLang === "en" && pathWithoutLang !== "/") {
+  const segments = pathWithoutLang.split("/").filter(Boolean);
+  const translatedSegments = segments.map(
+    (segment) => reverseTranslations[segment] || segment,
+  );
+  pathWithoutLang = "/" + translatedSegments.join("/");
+}
+
+// Generate localized paths
+const esPath = currentLang === "es" ? currentPath : pathWithoutLang;
+const enPath =
+  currentLang === "en" ? currentPath : localizePath(pathWithoutLang, "en");
+---
+
+<div class="relative" id="language-picker">
+  <button
+    id="language-button"
+    type="button"
+    class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+    aria-label="Select language"
+  >
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"
+      ></path>
+    </svg>
+    <span class="uppercase font-semibold">{currentLang}</span>
+    <svg
+      class="w-4 h-4 transition-transform"
+      id="dropdown-icon"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </button>
+
+  <div
+    id="language-dropdown"
+    class="hidden absolute right-0 mt-2 w-36 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden z-50"
+  >
+    <a
+      href={esPath}
+      class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 transition-colors {currentLang === 'es' ? 'bg-gray-50 font-semibold' : ''}"
+    >
+      <div class="flex items-center gap-2">
+        <span class="text-lg">🇲🇽</span>
+        <span>Español</span>
+      </div>
+    </a>
+    <a
+      href={enPath}
+      class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 transition-colors {currentLang === 'en' ? 'bg-gray-50 font-semibold' : ''}"
+    >
+      <div class="flex items-center gap-2">
+        <span class="text-lg">🇺🇸</span>
+        <span>English</span>
+      </div>
+    </a>
+  </div>
+</div>
+
+<script>
+  const button = document.getElementById("language-button");
+  const dropdown = document.getElementById("language-dropdown");
+  const icon = document.getElementById("dropdown-icon");
+
+  button?.addEventListener("click", () => {
+    dropdown?.classList.toggle("hidden");
+    icon?.classList.toggle("rotate-180");
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", (e) => {
+    if (
+      !button?.contains(e.target as Node) &&
+      !dropdown?.contains(e.target as Node)
+    ) {
+      dropdown?.classList.add("hidden");
+      icon?.classList.remove("rotate-180");
+    }
+  });
+</script>

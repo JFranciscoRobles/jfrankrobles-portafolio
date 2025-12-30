@@ -1,12 +1,12 @@
 ---
-import MainContent from "../components/MainContent.astro";
-import Skills from "../components/Skills.astro";
-import Tecnologies from "../components/Tecnologies.astro";
-import Global from "../layouts/Global.astro";
+import MainContent from "../../components/MainContent.astro";
+import Skills from "../../components/Skills.astro";
+import Tecnologies from "../../components/Tecnologies.astro";
+import Global from "../../layouts/Global.astro";
 import { HeadHrefLangs } from "astro-i18next/components";
 import i18next, { changeLanguage } from "i18next";
 
-changeLanguage("es");
+changeLanguage("en");
 ---
 
 <html lang={i18next.language}>

@@ -1,0 +1,162 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects"
+  },
+  "home": {
+    "badge": "Software Architect",
+    "greeting": "Hi, I'm",
+    "name": "J. Francisco Robles",
+    "description1": "Specialized in <strong>JavaScript</strong> with over 4 years of experience building high-performance web products and applications.",
+    "description2": "I create business solutions that are <strong>fast, efficient</strong>, and visually appealing, focusing on code quality and the best user experience.",
+    "viewProjects": "View Projects",
+    "contact": "Contact Me"
+  },
+  "about": {
+    "title": "About Me",
+    "intro1": "I'm Francisco, a software architect with <strong>over 4 years of experience</strong> specialized in the JavaScript ecosystem. My passion is transforming complex ideas into elegant and functional web solutions.",
+    "intro2": "I started my career in web development exploring different technologies until I found my specialization in <strong>React, Next.js, and Node.js</strong>. Throughout these years, I've had the opportunity to work on challenging projects that have allowed me to grow both technically and professionally.",
+    "intro3": "I currently work at <strong>Probien Bienes Exclusivos</strong>, where I develop custom CRM systems and e-commerce platforms for the real estate sector. My work includes everything from designing scalable architectures to implementing complex search functionalities with Meilisearch and Elasticsearch.",
+    "intro4": "What I enjoy most about development is the problem-solving process: understanding requirements, designing the most efficient solution, and writing clean code that other developers can easily maintain. I firmly believe that code should be both functional and readable.",
+    "whatIDo": "What I Do",
+    "frontend": "Frontend Development",
+    "frontendDesc": "I create modern and responsive user interfaces with React, Next.js, and Astro, prioritizing user experience and performance.",
+    "backend": "Backend Development",
+    "backendDesc": "I design and implement scalable REST APIs with Node.js and Express, integrating databases like PostgreSQL and Supabase.",
+    "search": "Search Systems",
+    "searchDesc": "I implement advanced search solutions with Meilisearch and Elasticsearch to enhance user experience.",
+    "architecture": "Web Architecture",
+    "architectureDesc": "I design scalable and maintainable architectures, making technical decisions that ensure long-term project success.",
+    "approach": "My Work Approach",
+    "cleanCode": "Clean Code:",
+    "cleanCodeDesc": "I write code thinking about the next developer who will read it, even if that developer is myself in 6 months.",
+    "learning": "Continuous Learning:",
+    "learningDesc": "Technology evolves rapidly. I stay updated with the latest trends and best practices in web development.",
+    "userFirst": "User First:",
+    "userFirstDesc": "Every technical decision is made with the goal of creating the best possible experience for the end user.",
+    "performance": "Performance:",
+    "performanceDesc": "I optimize every application to be fast and efficient, because users value their time.",
+    "letsTalk": "Let's Talk?",
+    "letsTalkDesc": "I'm always open to new interesting projects and collaboration opportunities. If you have an idea or project in mind, I'd love to hear from you.",
+    "sendMessage": "Send Me a Message"
+  },
+  "work": {
+    "title": "My Professional Journey",
+    "company": "Probien Bienes Exclusivos",
+    "position": "Software Architect",
+    "date": "2021 - Present",
+    "location": "Culiacán, Mexico",
+    "description": "Company specialized in luxury real estate",
+    "featuredProjects": "Featured Projects:",
+    "project1Title": "Real Estate E-commerce Platform",
+    "project1Desc": "Designed and developed from scratch a complete property catalog platform with advanced search system, dynamic filters, and multiple categories.",
+    "project2Title": "Custom CRM System",
+    "project2Desc": "Created a comprehensive client and property management system specifically tailored to the real estate sector's needs, with lead management and sales tracking.",
+    "project3Title": "Search Optimization",
+    "project3Desc": "Implemented and optimized a search engine that significantly improved user experience when searching for properties with complex criteria.",
+    "skillsDeveloped": "Skills Developed:",
+    "skill1": "Software architecture",
+    "skill2": "REST API design",
+    "skill3": "Performance optimization",
+    "skill4": "Database management",
+    "skill5": "Search systems implementation",
+    "skill6": "Deploy and CI/CD"
+  },
+  "projects": {
+    "title": "Projects",
+    "viewProject": "View Live Project",
+    "viewCode": "View Code",
+    "techStack": "Tech Stack:",
+    "featuredProjects": "Featured Projects",
+    "featuredProjectsDesc": "A selection of projects I've developed, from enterprise platforms to custom solutions with modern technologies.",
+    "workProjects": "Work Projects",
+    "workProjectsDesc": "Professional solutions developed for companies and businesses",
+    "personalProjects": "Personal Projects",
+    "personalProjectsDesc": "Tools and experiments created out of passion and learning",
+    "projectInMind": "Have a project in mind?",
+    "projectInMindDesc": "Let's work together to turn your idea into reality. From initial concept to final deployment.",
+    "startConversation": "Start a Conversation",
+    "items": {
+      "probienCatalog": {
+        "title": "Probien Catalog - Public Portal",
+        "description": "Web platform to showcase properties and real estate agents with over 500 static pages, SEO optimization, and responsive design.",
+        "features": [
+          "Real estate website with optimized design and functionality.",
+          "Advanced elastic search for enhanced user experience.",
+          "Implemented with Headless CMS to streamline development."
+        ]
+      },
+      "probienCRM": {
+        "title": "Probien CRM",
+        "description": "Internal system for comprehensive management of a real estate company with over 18 modules.",
+        "features": [
+          "Internal platform to manage properties, clients, and operations.",
+          "Workflow optimization and data centralization.",
+          "Scalability and security with modern technologies."
+        ]
+      },
+      "webpwizard": {
+        "title": "WebPWizard",
+        "description": "Fully online WebP image converter accessible from the browser.",
+        "features": [
+          "Convert images to WebP format quickly and easily.",
+          "No installation or registration required, works 100% in the browser.",
+          "Image optimization to reduce size without losing quality."
+        ]
+      },
+      "portfolio": {
+        "title": "Personal Portfolio",
+        "description": "My multilingual personal portfolio website with support for Spanish and English.",
+        "features": [
+          "Multilingual website with complete internationalization.",
+          "Translated routes and smooth navigation between languages.",
+          "Responsive design and SEO optimized."
+        ]
+      }
+    }
+  },
+  "technologies": {
+    "title": "My Tech Stack",
+    "subtitle": "A visual journey through the technologies I use to create complete solutions, from frontend to production deployment",
+    "step": "Step",
+    "readyProduction": "Production Ready",
+    "readyToStart": "Ready to start your project? Let's take this path together.",
+    "startProject": "Start a Project",
+    "categories": {
+      "uiux": {
+        "name": "UI/UX & Design",
+        "desc": "Modern, responsive interfaces and smooth animations"
+      },
+      "database": {
+        "name": "Database",
+        "desc": "Efficient SQL and NoSQL data management"
+      },
+      "backend": {
+        "name": "Backend",
+        "desc": "Robust, scalable, and real-time APIs"
+      },
+      "frontend": {
+        "name": "Frontend",
+        "desc": "Interactive, high-performance web applications"
+      },
+      "cms": {
+        "name": "CMS & Search",
+        "desc": "Manageable content and optimized search"
+      },
+      "deploy": {
+        "name": "Deploy & DevOps",
+        "desc": "Continuous deployment and scalable infrastructure"
+      }
+    }
+  },
+  "footer": {
+    "description": "Software Architect specialized in creating modern and efficient web solutions with JavaScript and cutting-edge technologies.",
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "email": "Email",
+    "allRightsReserved": "All rights reserved.",
+    "madeWith": "Made with",
+    "using": "using Astro and Tailwind CSS"
+  }
+}

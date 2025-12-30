@@ -1,0 +1,162 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "projects": "Proyectos"
+  },
+  "home": {
+    "badge": "Arquitecto de Software",
+    "greeting": "Hola, soy",
+    "name": "J. Francisco Robles",
+    "description1": "Especializado en <strong>JavaScript</strong> con más de 4 años de experiencia construyendo productos y aplicaciones web de alto rendimiento.",
+    "description2": "Creo soluciones para negocios que sean <strong>rápidas, eficientes</strong> y visualmente atractivas, enfocándome en la calidad del código y la mejor experiencia de usuario.",
+    "viewProjects": "Ver Proyectos",
+    "contact": "Contáctame"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "intro1": "Soy Francisco, un arquitecto de software con <strong>más de 4 años de experiencia</strong> especializado en el ecosistema de JavaScript. Mi pasión es transformar ideas complejas en soluciones web elegantes y funcionales.",
+    "intro2": "Comencé mi carrera en el desarrollo web explorando diferentes tecnologías hasta encontrar mi especialización en <strong>React, Next.js y Node.js</strong>. A lo largo de estos años, he tenido la oportunidad de trabajar en proyectos desafiantes que me han permitido crecer tanto técnica como profesionalmente.",
+    "intro3": "Actualmente trabajo en <strong>Probien Bienes Exclusivos</strong>, donde desarrollo sistemas CRM personalizados y plataformas de e-commerce para el sector inmobiliario. Mi trabajo incluye desde el diseño de arquitecturas escalables hasta la implementación de funcionalidades complejas de búsqueda con Meilisearch y Elasticsearch.",
+    "intro4": "Lo que más disfruto del desarrollo es el proceso de resolver problemas: entender los requisitos, diseñar la solución más eficiente y escribir código limpio que otros desarrolladores puedan mantener fácilmente. Creo firmemente que el código debe ser tanto funcional como legible.",
+    "whatIDo": "Lo que hago",
+    "frontend": "Desarrollo Frontend",
+    "frontendDesc": "Creo interfaces de usuario modernas y responsivas con React, Next.js y Astro, priorizando la experiencia del usuario y el rendimiento.",
+    "backend": "Desarrollo Backend",
+    "backendDesc": "Diseño e implemento APIs REST escalables con Node.js y Express, integrando bases de datos como PostgreSQL y Supabase.",
+    "search": "Sistemas de búsqueda",
+    "searchDesc": "Implemento soluciones de búsqueda avanzadas con Meilisearch y Elasticsearch para mejorar la experiencia del usuario.",
+    "architecture": "Arquitectura web",
+    "architectureDesc": "Diseño arquitecturas escalables y mantenibles, tomando decisiones técnicas que aseguran el éxito a largo plazo del proyecto.",
+    "approach": "Mi enfoque de trabajo",
+    "cleanCode": "Código limpio:",
+    "cleanCodeDesc": "Escribo código pensando en el próximo desarrollador que tenga que leerlo, incluso si ese desarrollador soy yo mismo en 6 meses.",
+    "learning": "Aprendizaje continuo:",
+    "learningDesc": "La tecnología evoluciona rápidamente. Me mantengo actualizado con las últimas tendencias y mejores prácticas del desarrollo web.",
+    "userFirst": "Usuario primero:",
+    "userFirstDesc": "Cada decisión técnica se toma pensando en crear la mejor experiencia posible para el usuario final.",
+    "performance": "Performance:",
+    "performanceDesc": "Optimizo cada aplicación para que sea rápida y eficiente, porque los usuarios valoran su tiempo.",
+    "letsTalk": "¿Hablamos?",
+    "letsTalkDesc": "Siempre estoy abierto a nuevos proyectos interesantes y oportunidades de colaboración. Si tienes una idea o proyecto en mente, me encantaría escucharte.",
+    "sendMessage": "Envíame un mensaje"
+  },
+  "work": {
+    "title": "Mi trayectoria profesional",
+    "company": "Probien Bienes Exclusivos",
+    "position": "Arquitecto de Software",
+    "date": "2021 - Actualidad",
+    "location": "Culiacán, México",
+    "description": "Empresa especializada en bienes raíces de lujo",
+    "featuredProjects": "Proyectos destacados:",
+    "project1Title": "Plataforma de E-commerce Inmobiliario",
+    "project1Desc": "Diseñé y desarrollé desde cero una plataforma completa de catálogo de propiedades con sistema de búsqueda avanzado, filtros dinámicos y múltiples categorías.",
+    "project2Title": "Sistema CRM Personalizado",
+    "project2Desc": "Creé un sistema integral de gestión de clientes y propiedades adaptado específicamente a las necesidades del sector inmobiliario, con gestión de leads y seguimiento de ventas.",
+    "project3Title": "Optimización de Búsqueda",
+    "project3Desc": "Implementé y optimicé un motor de búsqueda que mejoró significativamente la experiencia del usuario al buscar propiedades con criterios complejos.",
+    "skillsDeveloped": "Habilidades desarrolladas:",
+    "skill1": "Arquitectura de software",
+    "skill2": "Diseño de APIs REST",
+    "skill3": "Optimización de rendimiento",
+    "skill4": "Gestión de bases de datos",
+    "skill5": "Implementación de sistemas de búsqueda",
+    "skill6": "Deploy y CI/CD"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "viewProject": "Ver proyecto en vivo",
+    "viewCode": "Ver código",
+    "techStack": "Stack Tecnológico:",
+    "featuredProjects": "Proyectos Destacados",
+    "featuredProjectsDesc": "Una selección de proyectos que he desarrollado, desde plataformas empresariales hasta soluciones personalizadas con tecnologías modernas.",
+    "workProjects": "Proyectos Laborales",
+    "workProjectsDesc": "Soluciones profesionales desarrolladas para empresas y negocios",
+    "personalProjects": "Proyectos Personales",
+    "personalProjectsDesc": "Herramientas y experimentos creados por pasión y aprendizaje",
+    "projectInMind": "¿Tienes un proyecto en mente?",
+    "projectInMindDesc": "Trabajemos juntos para convertir tu idea en realidad. Desde el concepto inicial hasta el despliegue final.",
+    "startConversation": "Iniciar conversación",
+    "items": {
+      "probienCatalog": {
+        "title": "Probien Catálogo - Portal Publico",
+        "description": "Plataforma web para mostrar propiedades y agentes inmobiliarios con más de 500 páginas estáticas, optimización SEO y diseño responsivo.",
+        "features": [
+          "Sitio web de inmobiliaria con diseño y funcionalidad optimizados.",
+          "Búsqueda elástica avanzada para una experiencia de usuario mejorada.",
+          "Implementado con Headless CMS para agilizar el desarrollo."
+        ]
+      },
+      "probienCRM": {
+        "title": "Probien CRM",
+        "description": "Sistema interno para la gestión integral de una empresa inmobiliaria con más de 18 módulos.",
+        "features": [
+          "Plataforma interna para administrar propiedades, clientes y operaciones.",
+          "Optimización de flujos de trabajo y centralización de datos.",
+          "Escalabilidad y seguridad con tecnologías modernas."
+        ]
+      },
+      "webpwizard": {
+        "title": "WebPWizard",
+        "description": "Convertidor de imágenes a WebP totalmente online y accesible desde el navegador.",
+        "features": [
+          "Convierte imágenes a formato WebP de manera rápida y sencilla.",
+          "No requiere instalación ni registro, funciona 100% en el navegador.",
+          "Optimización de imágenes para reducir el tamaño sin perder calidad."
+        ]
+      },
+      "portfolio": {
+        "title": "Portafolio Personal",
+        "description": "Mi portafolio web personal multilingüe con soporte para español e inglés.",
+        "features": [
+          "Sitio web multilingüe con internacionalización completa.",
+          "Rutas traducidas y navegación fluida entre idiomas.",
+          "Diseño responsivo y optimizado para SEO."
+        ]
+      }
+    }
+  },
+  "technologies": {
+    "title": "Mi Stack Tecnológico",
+    "subtitle": "Un recorrido visual por las tecnologías que uso para crear soluciones completas, desde el frontend hasta el despliegue en producción",
+    "step": "Paso",
+    "readyProduction": "Producción Lista",
+    "readyToStart": "¿Listo para empezar tu proyecto? Sigamos este camino juntos.",
+    "startProject": "Iniciar un proyecto",
+    "categories": {
+      "uiux": {
+        "name": "UI/UX & Diseño",
+        "desc": "Interfaces modernas, responsivas y animaciones fluidas"
+      },
+      "database": {
+        "name": "Base de Datos",
+        "desc": "Gestión eficiente de datos SQL y NoSQL"
+      },
+      "backend": {
+        "name": "Backend",
+        "desc": "APIs robustas, escalables y en tiempo real"
+      },
+      "frontend": {
+        "name": "Frontend",
+        "desc": "Aplicaciones web interactivas y de alto rendimiento"
+      },
+      "cms": {
+        "name": "CMS & Búsqueda",
+        "desc": "Contenido administrable y búsqueda optimizada"
+      },
+      "deploy": {
+        "name": "Deploy & DevOps",
+        "desc": "Despliegue continuo e infraestructura escalable"
+      }
+    }
+  },
+  "footer": {
+    "description": "Arquitecto de Software especializado en crear soluciones web modernas y eficientes con JavaScript y tecnologías de vanguardia.",
+    "navigation": "Navegación",
+    "contact": "Contacto",
+    "email": "Email",
+    "allRightsReserved": "Todos los derechos reservados.",
+    "madeWith": "Hecho con",
+    "using": "usando Astro y Tailwind CSS"
+  }
+}
