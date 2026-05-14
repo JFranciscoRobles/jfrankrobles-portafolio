@@ -8,6 +8,7 @@ export default {
       "proyectos": "projects",
       "ingenieria": "engineering",
       "negocios": "business",
+      "contacto": "contact",
     },
   },
 };

@@ -4,6 +4,7 @@ import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 import BaseHead from "../components/BaseHead.astro";
 import { SITE_DESCRIPTION } from "../consts";
+import { ClientRouter } from "astro:transitions";
 
 interface Props {
   pageTitle: string;
@@ -11,6 +12,7 @@ interface Props {
   image?: string;
   type?: 'website' | 'article';
   publishedTime?: string;
+  locale?: string;
 }
 
 const {
@@ -18,11 +20,14 @@ const {
   description = SITE_DESCRIPTION,
   image,
   type,
-  publishedTime
+  publishedTime,
+  locale,
 } = Astro.props;
+
+const resolvedLocale = locale ?? (Astro.url.pathname.startsWith('/en') ? 'en' : 'es');
 ---
 
-<html lang="es">
+<html lang={resolvedLocale}>
   <head>
     <BaseHead
       title={pageTitle}
@@ -30,11 +35,14 @@ const {
       image={image}
       type={type}
       publishedTime={publishedTime}
+      locale={resolvedLocale}
     />
+    <slot name="head" />
+    <ClientRouter />
   </head>
   <body class="flex flex-col min-h-screen">
     <Header />
-    <main class="flex-grow">
+    <main class="flex-grow" transition:animate="fade">
       <slot />
     </main>
     <Footer />

@@ -1,0 +1,41 @@
+---
+import { changeLanguage } from "i18next";
+import Global from "../../layouts/Global.astro";
+import ProjectDetail from "../../components/ProjectDetail.astro";
+import { projects } from "../../data/projects";
+import { SITE_URL } from "../../consts";
+
+export function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const idx = projects.findIndex((p) => p.slug === project.slug);
+const next = projects[(idx + 1) % projects.length];
+
+changeLanguage("es");
+---
+
+<Global
+  pageTitle={`${project.title} — J. Francisco Robles`}
+  description={project.tagline.es}
+  image={project.cover}
+  type="article"
+  locale="es"
+>
+  <Fragment slot="head">
+    <link rel="alternate" hreflang="es" href={`${SITE_URL}/proyectos/${project.slug}`} />
+    <link rel="alternate" hreflang="en" href={`${SITE_URL}/en/projects/${project.slug}`} />
+    <link rel="alternate" hreflang="x-default" href={`${SITE_URL}/proyectos/${project.slug}`} />
+  </Fragment>
+  <ProjectDetail
+    project={project}
+    locale="es"
+    next={next}
+    backHref="/proyectos"
+    nextHrefPrefix="/proyectos"
+  />
+</Global>

@@ -96,6 +96,11 @@
     "subtitle": "Your business needs a digital presence that works. I create websites and online stores that attract customers, generate sales, and save you time.",
     "scheduleFree": "Schedule free 30-min review",
     "problems": "Does this sound familiar?",
+    "problem1": "Your business doesn't show up when people search on Google",
+    "problem2": "You have social media but no place of your own to showcase your products",
+    "problem3": "You lose customers because they have no easy way to contact you or buy",
+    "problem4": "Your competition already has a website and you don't",
+    "problem5": "You tried building one yourself and it ended up abandoned",
     "goodNews": "The good news:",
     "goodNewsDesc": "You don't need to be a tech expert. I handle all the technical process while you focus on your business.",
     "services": "What I Can Do for Your Business",
@@ -270,6 +275,20 @@
     "projectInMind": "Have a project in mind?",
     "projectInMindDesc": "Let's work together to turn your idea into reality. From initial concept to final deployment.",
     "startConversation": "Start a Conversation",
+    "viewDetail": "View case study",
+    "backToIndex": "Back to index",
+    "context": "Context",
+    "role": "My role",
+    "client": "Client",
+    "status": "Status",
+    "year": "Year",
+    "decisions": "Technical decisions",
+    "metrics": "Metrics",
+    "stack": "Stack",
+    "links": "Links",
+    "openLive": "Live site",
+    "openRepo": "Code on GitHub",
+    "nextProject": "Next project",
     "items": {
       "probienCatalog": {
         "title": "Probien Catalog - Public Portal",
@@ -282,20 +301,40 @@
       },
       "probienCRM": {
         "title": "Probien CRM",
-        "description": "Internal system for comprehensive management of a real estate company with over 18 modules.",
+        "description": "Internal system for end-to-end real estate operations with 18+ modules. Complete UI redesign and new mobile view built for fieldwork.",
         "features": [
-          "Internal platform to manage properties, clients, and operations.",
-          "Workflow optimization and data centralization.",
-          "Scalability and security with modern technologies."
+          "Redesigned interface focused on the sales team's day-to-day productivity.",
+          "Dedicated mobile view so agents can browse properties and leads on the go.",
+          "18+ modules: CRM, properties, leads, sales, inventory and reporting.",
+          "Scalable, secure architecture built on modern technologies."
+        ]
+      },
+      "zeitap": {
+        "title": "Zeitap",
+        "description": "SaaS legal software built for Mexican law firms. Centralizes case, client and document management with built-in AI.",
+        "features": [
+          "Legal Tracker with structured case follow-up and real-time status.",
+          "Automated alerts wired into the Mexican judiciary to monitor deadlines.",
+          "Client portal so clients can check progress, documents and updates without back-and-forth.",
+          "Embedded AI assistants for repetitive legal tasks."
         ]
       },
       "webpwizard": {
         "title": "WebPWizard",
-        "description": "Fully online WebP image converter accessible from the browser.",
+        "description": "Browser-only WebP image converter. No uploads, no signup, no waiting.",
         "features": [
-          "Convert images to WebP format quickly and easily.",
-          "No installation or registration required, works 100% in the browser.",
-          "Image optimization to reduce size without losing quality."
+          "Fully client-side processing — your images never leave the browser.",
+          "Batch conversion with quality control and live preview.",
+          "Supports JPG, PNG and other formats with one-click download."
+        ]
+      },
+      "bloom": {
+        "title": "Bloom",
+        "description": "Desktop app for personal productivity and finance: kanban, gantt and multi-currency accounts in a single tool.",
+        "features": [
+          "Kanban boards and Gantt timeline with drag-and-drop and task dependencies.",
+          "Multi-currency accounts with categorization and visual reporting.",
+          "Ten pastel themes per board, fully offline with local SQLite storage."
         ]
       },
       "portfolio": {
@@ -342,6 +381,41 @@
         "desc": "Continuous deployment and scalable infrastructure"
       }
     }
+  },
+  "contact": {
+    "label": "Contact — 01",
+    "title": "Let's talk.",
+    "intro": "The best way to reach me is by email. I reply within 24 hours on business days. LinkedIn or WhatsApp also work.",
+    "primary": "Primary channel",
+    "primaryDesc": "Direct email. I check it multiple times a day.",
+    "alt": "Other channels",
+    "linkedin": "LinkedIn",
+    "linkedinDesc": "For professional conversations and opportunities.",
+    "github": "GitHub",
+    "githubDesc": "If you want to review my code before reaching out.",
+    "whatsapp": "WhatsApp",
+    "whatsappDesc": "Quick message. Best for business clients.",
+    "cv": "Download CV",
+    "cvDesc": "Updated PDF, one page, ready for your pipeline.",
+    "location": "Based in",
+    "locationValue": "Tijuana, Mexico",
+    "timezone": "Timezone",
+    "timezoneValue": "GMT−7 (Pacific)",
+    "availability": "Availability",
+    "availabilityValue": "Open to selected projects",
+    "schedule": "Schedule a call"
+  },
+  "sitemap": {
+    "label": "Sitemap — 00",
+    "title": "Site index.",
+    "intro": "Every page, in order. If you'd rather have the XML sitemap for search engines, it's at /sitemap-index.xml.",
+    "main": "Main",
+    "work": "Work & services",
+    "projects": "Projects",
+    "system": "System",
+    "rss": "RSS feed",
+    "xmlSitemap": "XML sitemap",
+    "robots": "robots.txt"
   },
   "footer": {
     "description": "Software Architect specialized in creating effective web solutions. I work with technical teams and businesses that need professional digital presence.",

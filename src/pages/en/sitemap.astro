@@ -1,0 +1,184 @@
+---
+import Global from "../../layouts/Global.astro";
+import { changeLanguage, t } from "i18next";
+import { projects } from "../../data/projects";
+import { SITE_URL } from "../../consts";
+
+changeLanguage("en");
+
+const main = [
+  { href: "/en", label: t("nav.home") },
+  { href: "/en/contact", label: t("nav.contact") },
+];
+
+const work = [
+  { href: "/en/about-me", label: t("nav.about") },
+  { href: "/en/engineering", label: t("nav.engineering") },
+  { href: "/en/business", label: t("nav.business") },
+];
+
+const projectIndex = [{ href: "/en/projects", label: t("projects.featuredProjects") }];
+const projectList = projects.map((p) => ({
+  href: `/en/projects/${p.slug}`,
+  label: p.title,
+  meta: `${p.index} · ${p.year}`,
+}));
+
+const system = [
+  { href: `${SITE_URL}/sitemap-index.xml`, label: t("sitemap.xmlSitemap"), external: true },
+  { href: `${SITE_URL}/rss.xml`, label: t("sitemap.rss"), external: true },
+  { href: `${SITE_URL}/robots.txt`, label: t("sitemap.robots"), external: true },
+];
+---
+
+<Global
+  pageTitle="Sitemap — J. Francisco Robles"
+  description="Complete index of every page on the site."
+  locale="en"
+>
+  <Fragment slot="head">
+    <link rel="alternate" hreflang="es" href={`${SITE_URL}/sitemap`} />
+    <link rel="alternate" hreflang="en" href={`${SITE_URL}/en/sitemap`} />
+    <link rel="alternate" hreflang="x-default" href={`${SITE_URL}/sitemap`} />
+  </Fragment>
+
+  <section class="border-b hairline">
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 pt-24 pb-20 md:pt-32 md:pb-24">
+      <p class="editorial-meta mb-12">{t("sitemap.label")}</p>
+      <h1 class="editorial-display text-[2.25rem] sm:text-[3rem] md:text-[5rem] text-paper text-balance mb-12">
+        {t("sitemap.title")}
+      </h1>
+      <p class="text-paper-muted text-lg md:text-xl max-w-3xl leading-relaxed text-pretty">
+        {t("sitemap.intro")}
+      </p>
+    </div>
+  </section>
+
+  <section class="border-b hairline">
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+        <p class="md:col-span-2 editorial-meta">01 / {t("sitemap.main")}</p>
+      </div>
+      <ul class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <li class="md:col-span-10 md:col-start-3">
+          <ul class="border-t hairline">
+            {main.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class="flex justify-between items-baseline py-5 border-b hairline group transition-colors"
+                >
+                  <span class="editorial-display text-2xl md:text-3xl text-paper group-hover:text-paper-muted transition-colors">
+                    {item.label}
+                  </span>
+                  <span class="editorial-meta text-paper-dim font-mono">{item.href}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="border-b hairline bg-ink-raised">
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+        <p class="md:col-span-2 editorial-meta">02 / {t("sitemap.work")}</p>
+      </div>
+      <ul class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <li class="md:col-span-10 md:col-start-3">
+          <ul class="border-t hairline">
+            {work.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class="flex justify-between items-baseline py-5 border-b hairline group transition-colors"
+                >
+                  <span class="editorial-display text-2xl md:text-3xl text-paper group-hover:text-paper-muted transition-colors">
+                    {item.label}
+                  </span>
+                  <span class="editorial-meta text-paper-dim font-mono">{item.href}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="border-b hairline">
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+        <p class="md:col-span-2 editorial-meta">03 / {t("sitemap.projects")}</p>
+      </div>
+      <ul class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <li class="md:col-span-10 md:col-start-3">
+          <ul class="border-t hairline">
+            {projectIndex.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class="flex justify-between items-baseline py-5 border-b hairline group transition-colors"
+                >
+                  <span class="editorial-display text-2xl md:text-3xl text-paper group-hover:text-paper-muted transition-colors">
+                    {item.label}
+                  </span>
+                  <span class="editorial-meta text-paper-dim font-mono">{item.href}</span>
+                </a>
+              </li>
+            ))}
+            {projectList.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class="flex justify-between items-baseline gap-4 py-5 border-b hairline group transition-colors"
+                >
+                  <span class="flex items-baseline gap-4 min-w-0">
+                    <span class="editorial-meta text-paper-dim hidden sm:inline">{item.meta}</span>
+                    <span class="editorial-display text-xl md:text-2xl text-paper group-hover:text-paper-muted transition-colors truncate">
+                      {item.label}
+                    </span>
+                  </span>
+                  <span class="editorial-meta text-paper-dim font-mono hidden md:inline">{item.href}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+        <p class="md:col-span-2 editorial-meta">04 / {t("sitemap.system")}</p>
+      </div>
+      <ul class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <li class="md:col-span-10 md:col-start-3">
+          <ul class="border-t hairline">
+            {system.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex justify-between items-baseline py-5 border-b hairline group transition-colors"
+                >
+                  <span class="editorial-display text-2xl md:text-3xl text-paper group-hover:text-paper-muted transition-colors">
+                    {item.label} <span class="text-paper-dim">↗</span>
+                  </span>
+                  <span class="editorial-meta text-paper-dim font-mono hidden md:inline">
+                    {item.href.replace(SITE_URL, "")}
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+</Global>

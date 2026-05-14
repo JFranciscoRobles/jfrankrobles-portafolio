@@ -2,139 +2,128 @@
 import Works from "../../components/Works.astro";
 import Global from "../../layouts/Global.astro";
 import { SOCIAL_LINKS } from "../../consts";
-import i18next, { t, changeLanguage } from "i18next";
+import { t, changeLanguage } from "i18next";
 import { HeadHrefLangs } from "astro-i18next/components";
 
 changeLanguage("en");
 ---
 
 <Global
-  pageTitle="Sobre mí - J. Francisco Robles"
-  description="Conoce mi trayectoria profesional como desarrollador full-stack. Experiencia en desarrollo de CRMs, e-commerce y soluciones web empresariales con JavaScript y tecnologías modernas."
+  pageTitle="About Me - J. Francisco Robles"
+  description="Learn about my professional journey as a full-stack developer. Experience building CRMs, e-commerce platforms, and enterprise web solutions with JavaScript and modern technologies."
+  locale="en"
 >
   <HeadHrefLangs slot="head" />
-  <main class="flex flex-col w-full items-center px-6 py-12 gap-16 max-w-5xl mx-auto">
-    <!-- Introducción -->
-    <section class="w-full">
-      <h1 class="font-black text-4xl md:text-5xl text-gray-900 mb-8">
+
+  <section class="border-b hairline">
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 pt-24 pb-20 md:pt-32 md:pb-24">
+      <p class="editorial-meta mb-12">About — 01</p>
+      <h1 class="editorial-display text-[2.25rem] sm:text-[3rem] md:text-[5rem] text-paper text-balance">
         {t("about.title")}
       </h1>
+    </div>
+  </section>
 
-      <div class="prose prose-lg max-w-none text-gray-700 space-y-6">
-        <p class="text-xl leading-relaxed" set:html={t("about.intro1")} />
-        <p class="text-lg leading-relaxed" set:html={t("about.intro2")} />
-        <p class="text-lg leading-relaxed" set:html={t("about.intro3")} />
-        <p class="text-lg leading-relaxed" set:html={t("about.intro4")} />
-      </div>
-    </section>
-
-    <!-- Lo que hago -->
-    <section class="w-full">
-      <h2 class="font-black text-3xl md:text-4xl text-gray-900 mb-8">
-        {t("about.whatIDo")}
-      </h2>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="border-l-4 border-gray-900 pl-6 py-2">
-          <h3 class="text-xl font-bold text-gray-900 mb-2">
-            {t("about.frontend")}
-          </h3>
-          <p class="text-gray-700">
-            {t("about.frontendDesc")}
-          </p>
-        </div>
-
-        <div class="border-l-4 border-gray-900 pl-6 py-2">
-          <h3 class="text-xl font-bold text-gray-900 mb-2">
-            {t("about.backend")}
-          </h3>
-          <p class="text-gray-700">
-            {t("about.backendDesc")}
-          </p>
-        </div>
-
-        <div class="border-l-4 border-gray-900 pl-6 py-2">
-          <h3 class="text-xl font-bold text-gray-900 mb-2">
-            {t("about.search")}
-          </h3>
-          <p class="text-gray-700">
-            {t("about.searchDesc")}
-          </p>
-        </div>
-
-        <div class="border-l-4 border-gray-900 pl-6 py-2">
-          <h3 class="text-xl font-bold text-gray-900 mb-2">
-            {t("about.architecture")}
-          </h3>
-          <p class="text-gray-700">
-            {t("about.architectureDesc")}
-          </p>
+  <section class="border-b hairline">
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <p class="md:col-span-2 editorial-meta">Intro</p>
+        <div class="md:col-span-9 space-y-8 text-paper-muted text-lg leading-relaxed text-pretty">
+          <p class="text-xl text-paper" set:html={t("about.intro1")} />
+          <p set:html={t("about.intro2")} />
+          <p set:html={t("about.intro3")} />
+          <p set:html={t("about.intro4")} />
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Mi enfoque -->
-    <section class="w-full bg-gray-50 rounded-2xl p-8 md:p-12">
-      <h2 class="font-black text-3xl md:text-4xl text-gray-900 mb-6">
-        {t("about.approach")}
-      </h2>
+  <section class="border-b hairline bg-ink-raised">
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
+        <p class="md:col-span-2 editorial-meta">02</p>
+        <h2 class="md:col-span-10 editorial-display text-3xl md:text-5xl text-paper text-balance">
+          {t("about.whatIDo")}
+        </h2>
+      </div>
 
-      <div class="space-y-4 text-gray-700">
-        <div class="flex gap-3">
-          <span class="text-gray-900 font-bold text-xl">→</span>
-          <p class="flex-1">
-            <strong>{t("about.cleanCode")}</strong> {t("about.cleanCodeDesc")}
-          </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+        <div class="border-t hairline pt-8">
+          <p class="editorial-meta text-paper-dim mb-4">01 / Frontend</p>
+          <h3 class="editorial-display text-2xl text-paper mb-4">{t("about.frontend")}</h3>
+          <p class="text-paper-muted leading-relaxed text-pretty">{t("about.frontendDesc")}</p>
         </div>
-
-        <div class="flex gap-3">
-          <span class="text-gray-900 font-bold text-xl">→</span>
-          <p class="flex-1">
-            <strong>{t("about.learning")}</strong> {t("about.learningDesc")}
-          </p>
+        <div class="border-t hairline pt-8">
+          <p class="editorial-meta text-paper-dim mb-4">02 / Backend</p>
+          <h3 class="editorial-display text-2xl text-paper mb-4">{t("about.backend")}</h3>
+          <p class="text-paper-muted leading-relaxed text-pretty">{t("about.backendDesc")}</p>
         </div>
-
-        <div class="flex gap-3">
-          <span class="text-gray-900 font-bold text-xl">→</span>
-          <p class="flex-1">
-            <strong>{t("about.userFirst")}</strong> {t("about.userFirstDesc")}
-          </p>
+        <div class="border-t hairline pt-8">
+          <p class="editorial-meta text-paper-dim mb-4">03 / Search</p>
+          <h3 class="editorial-display text-2xl text-paper mb-4">{t("about.search")}</h3>
+          <p class="text-paper-muted leading-relaxed text-pretty">{t("about.searchDesc")}</p>
         </div>
-
-        <div class="flex gap-3">
-          <span class="text-gray-900 font-bold text-xl">→</span>
-          <p class="flex-1">
-            <strong>{t("about.performance")}</strong> {t("about.performanceDesc")}
-          </p>
+        <div class="border-t hairline pt-8">
+          <p class="editorial-meta text-paper-dim mb-4">04 / Architecture</p>
+          <h3 class="editorial-display text-2xl text-paper mb-4">{t("about.architecture")}</h3>
+          <p class="text-paper-muted leading-relaxed text-pretty">{t("about.architectureDesc")}</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Experiencia -->
-    <Works />
+  <section class="border-b hairline">
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
+        <p class="md:col-span-2 editorial-meta">03</p>
+        <h2 class="md:col-span-10 editorial-display text-3xl md:text-5xl text-paper text-balance">
+          {t("about.approach")}
+        </h2>
+      </div>
 
-    <!-- Contacto -->
-    <section class="w-full text-center border-t-2 border-gray-200 pt-16">
-      <h2 class="font-black text-3xl md:text-4xl text-gray-900 mb-4">
+      <dl class="space-y-12 max-w-4xl">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 border-t hairline pt-8">
+          <dt class="md:col-span-4 editorial-display text-xl text-paper">{t("about.cleanCode")}</dt>
+          <dd class="md:col-span-8 text-paper-muted leading-relaxed text-pretty">{t("about.cleanCodeDesc")}</dd>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 border-t hairline pt-8">
+          <dt class="md:col-span-4 editorial-display text-xl text-paper">{t("about.learning")}</dt>
+          <dd class="md:col-span-8 text-paper-muted leading-relaxed text-pretty">{t("about.learningDesc")}</dd>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 border-t hairline pt-8">
+          <dt class="md:col-span-4 editorial-display text-xl text-paper">{t("about.userFirst")}</dt>
+          <dd class="md:col-span-8 text-paper-muted leading-relaxed text-pretty">{t("about.userFirstDesc")}</dd>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 border-t hairline pt-8">
+          <dt class="md:col-span-4 editorial-display text-xl text-paper">{t("about.performance")}</dt>
+          <dd class="md:col-span-8 text-paper-muted leading-relaxed text-pretty">{t("about.performanceDesc")}</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="border-b hairline bg-ink-raised">
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
+      <Works />
+    </div>
+  </section>
+
+  <section>
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-24 md:py-32">
+      <p class="editorial-meta mb-8">Contact</p>
+      <h2 class="editorial-display text-3xl md:text-6xl text-paper mb-8 text-balance max-w-4xl">
         {t("about.letsTalk")}
       </h2>
-      <p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+      <p class="text-paper-muted text-lg mb-12 max-w-2xl leading-relaxed text-pretty">
         {t("about.letsTalkDesc")}
       </p>
       <a
         href={`mailto:${SOCIAL_LINKS.email}`}
-        class="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 text-white text-lg font-semibold rounded-lg hover:bg-gray-800 transition-colors shadow-lg hover:shadow-xl"
+        class="editorial-display text-2xl md:text-4xl text-paper hover:text-paper-muted transition-colors inline-block break-all"
       >
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-          ></path>
-        </svg>
-        {t("about.sendMessage")}
+        {SOCIAL_LINKS.email}
+        <span class="text-paper-dim"> →</span>
       </a>
-    </section>
-  </main>
+    </div>
+  </section>
 </Global>

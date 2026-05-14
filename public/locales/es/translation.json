@@ -270,6 +270,20 @@
     "projectInMind": "¿Tienes un proyecto en mente?",
     "projectInMindDesc": "Trabajemos juntos para convertir tu idea en realidad. Desde el concepto inicial hasta el despliegue final.",
     "startConversation": "Iniciar conversación",
+    "viewDetail": "Ver caso de estudio",
+    "backToIndex": "Volver al índice",
+    "context": "Contexto",
+    "role": "Mi rol",
+    "client": "Cliente",
+    "status": "Estado",
+    "year": "Año",
+    "decisions": "Decisiones técnicas",
+    "metrics": "Métricas",
+    "stack": "Stack",
+    "links": "Enlaces",
+    "openLive": "Sitio en vivo",
+    "openRepo": "Código en GitHub",
+    "nextProject": "Siguiente proyecto",
     "items": {
       "probienCatalog": {
         "title": "Probien Catálogo - Portal Publico",
@@ -282,20 +296,40 @@
       },
       "probienCRM": {
         "title": "Probien CRM",
-        "description": "Sistema interno para la gestión integral de una empresa inmobiliaria con más de 18 módulos.",
+        "description": "Sistema interno para la gestión integral de una empresa inmobiliaria con más de 18 módulos. Rediseño completo de interfaz y nueva vista mobile para uso en campo.",
         "features": [
-          "Plataforma interna para administrar propiedades, clientes y operaciones.",
-          "Optimización de flujos de trabajo y centralización de datos.",
+          "Nueva interfaz rediseñada para máxima productividad del equipo comercial.",
+          "Vista móvil dedicada para que agentes consulten propiedades y leads en campo.",
+          "Más de 18 módulos: CRM, propiedades, leads, ventas, inventario y reportes.",
           "Escalabilidad y seguridad con tecnologías modernas."
+        ]
+      },
+      "zeitap": {
+        "title": "Zeitap",
+        "description": "Software jurídico SaaS diseñado para despachos de abogados en México. Centraliza la gestión de casos, clientes y documentos con IA integrada.",
+        "features": [
+          "Legal Tracker con seguimiento estructurado de asuntos jurídicos y estatus en tiempo real.",
+          "Alertas automáticas conectadas a tribunales del Poder Judicial para monitoreo de vencimientos.",
+          "Portal del cliente para que consulten avances, documentos y actualizaciones sin depender de mensajes.",
+          "Asistentes con IA integrados para tareas legales repetitivas."
         ]
       },
       "webpwizard": {
         "title": "WebPWizard",
-        "description": "Convertidor de imágenes a WebP totalmente online y accesible desde el navegador.",
+        "description": "Convertidor de imágenes a WebP 100% en el navegador. Sin uploads, sin registro, sin esperas.",
         "features": [
-          "Convierte imágenes a formato WebP de manera rápida y sencilla.",
-          "No requiere instalación ni registro, funciona 100% en el navegador.",
-          "Optimización de imágenes para reducir el tamaño sin perder calidad."
+          "Procesamiento totalmente local: tus imágenes nunca salen del navegador.",
+          "Conversión por lotes con control de calidad y vista previa.",
+          "Soporte para JPG, PNG y otros formatos con descarga inmediata."
+        ]
+      },
+      "bloom": {
+        "title": "Bloom",
+        "description": "App de escritorio para productividad personal y finanzas: kanban, gantt y cuentas multi-moneda en una sola herramienta.",
+        "features": [
+          "Tableros Kanban y diagrama Gantt con drag-and-drop y dependencias entre tareas.",
+          "Gestión de cuentas en múltiples monedas con categorización y gráficos.",
+          "Diez temas pastel personalizables por tablero, todo offline con SQLite."
         ]
       },
       "portfolio": {
@@ -342,6 +376,41 @@
         "desc": "Despliegue continuo e infraestructura escalable"
       }
     }
+  },
+  "contact": {
+    "label": "Contacto — 01",
+    "title": "Hablemos.",
+    "intro": "La mejor forma de llegar a mí es por email. Respondo en menos de 24 horas en días laborales. Si prefieres LinkedIn o WhatsApp, también funciona.",
+    "primary": "Canal principal",
+    "primaryDesc": "Email directo. Lo reviso varias veces al día.",
+    "alt": "Otros canales",
+    "linkedin": "LinkedIn",
+    "linkedinDesc": "Para conversaciones profesionales y oportunidades.",
+    "github": "GitHub",
+    "githubDesc": "Si quieres revisar mi código antes de escribirme.",
+    "whatsapp": "WhatsApp",
+    "whatsappDesc": "Mensaje rápido. Ideal para clientes de negocio.",
+    "cv": "Descargar CV",
+    "cvDesc": "PDF actualizado, una página, listo para tu pipeline.",
+    "location": "Ubicación",
+    "locationValue": "Tijuana, México",
+    "timezone": "Zona horaria",
+    "timezoneValue": "GMT−7 (Pacífico)",
+    "availability": "Disponibilidad",
+    "availabilityValue": "Abierto a proyectos seleccionados",
+    "schedule": "Agendar una llamada"
+  },
+  "sitemap": {
+    "label": "Sitemap — 00",
+    "title": "Índice del sitio.",
+    "intro": "Todas las páginas, en orden. Si prefieres el sitemap XML para buscadores, está en /sitemap-index.xml.",
+    "main": "Principal",
+    "work": "Trabajo y servicios",
+    "projects": "Proyectos",
+    "system": "Sistema",
+    "rss": "Feed RSS",
+    "xmlSitemap": "Sitemap XML",
+    "robots": "robots.txt"
   },
   "footer": {
     "description": "Arquitecto de Software especializado en crear soluciones web efectivas. Trabajo con equipos técnicos y negocios que necesitan presencia digital profesional.",

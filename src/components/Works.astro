@@ -38,82 +38,69 @@ const timeline = [
 ---
 
 <section class="w-full">
-  <h2 class="font-black text-3xl md:text-4xl text-gray-900 mb-10">
+  <p class="editorial-meta mb-8">Experiencia</p>
+  <h2 class="editorial-display text-3xl md:text-5xl text-paper mb-16">
     {t("work.title")}
   </h2>
 
-  <div class="relative">
-    <!-- Línea vertical de tiempo (visible en desktop) -->
-    <div class="hidden md:block absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-gray-900 to-gray-400"></div>
+  {timeline.map((item) => (
+    <article class="border-t hairline pt-12">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
+        <div class="md:col-span-4">
+          <p class="editorial-meta text-paper-dim mb-3">{item.date}</p>
+          <h3 class="editorial-display text-2xl md:text-3xl text-paper mb-2">
+            {item.company}
+          </h3>
+          <p class="text-paper-muted text-sm mb-1">{item.title}</p>
+          <p class="text-paper-dim text-sm">{item.location}</p>
+        </div>
 
-    {timeline.map((item, index) => (
-      <div class="relative pl-0 md:pl-12 mb-12">
-        <!-- Punto en la línea de tiempo (visible en desktop) -->
-        <div class="hidden md:block absolute left-0 top-2 w-4 h-4 -ml-[7px] bg-gray-900 rounded-full ring-4 ring-white"></div>
+        <div class="md:col-span-7 md:col-start-6">
+          <p class="text-paper-muted text-lg leading-relaxed text-pretty">
+            {item.description}
+          </p>
+        </div>
+      </div>
 
-        <!-- Contenido -->
-        <div class="bg-white border-2 border-gray-200 rounded-xl p-6 md:p-8 hover:border-gray-900 transition-colors">
-          <!-- Header -->
-          <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-            <div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-1">
-                {item.company}
-              </h3>
-              <p class="text-xl font-semibold text-gray-900 mb-2">
-                {item.title}
+      <div class="border-t hairline pt-12 mb-16">
+        <p class="editorial-meta mb-10">{t("work.featuredProjects")}</p>
+        <div class="space-y-12">
+          {item.achievements.map((achievement, i) => (
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+              <p class="editorial-meta md:col-span-1 text-paper-dim">
+                0{i + 1}
               </p>
-              <p class="text-gray-600 text-sm mb-2">
-                {item.description}
-              </p>
-            </div>
-            <div class="md:text-right flex-shrink-0 mt-2 md:mt-0 md:ml-4">
-              <p class="text-sm font-semibold text-gray-900 bg-gray-100 px-3 py-1 rounded-full inline-block">
-                {item.date}
-              </p>
-              <p class="text-sm text-gray-600 mt-1">
-                {item.location}
-              </p>
-            </div>
-          </div>
-
-          <!-- Logros principales -->
-          <div class="space-y-6 mb-6">
-            <h4 class="font-bold text-gray-900 text-lg">{t("work.featuredProjects")}</h4>
-            {item.achievements.map((achievement) => (
-              <div class="border-l-4 border-gray-900 pl-4">
-                <h5 class="font-bold text-gray-900 mb-2">
+              <div class="md:col-span-11">
+                <h4 class="editorial-display text-xl md:text-2xl text-paper mb-4">
                   {achievement.title}
-                </h5>
-                <p class="text-gray-700 mb-3">
+                </h4>
+                <p class="text-paper-muted leading-relaxed mb-6 text-pretty max-w-3xl">
                   {achievement.description}
                 </p>
-                <div class="flex flex-wrap gap-2">
+                <div class="flex flex-wrap gap-x-4 gap-y-2">
                   {achievement.tech.map((tech) => (
-                    <span class="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full font-medium">
-                      {tech}
-                    </span>
+                    <span class="font-mono text-xs text-paper-muted">{tech}</span>
                   ))}
                 </div>
               </div>
-            ))}
-          </div>
-
-          <!-- Habilidades desarrolladas -->
-          <div>
-            <h4 class="font-bold text-gray-900 text-lg mb-3">{t("work.skillsDeveloped")}</h4>
-            <div class="flex flex-wrap gap-2">
-              {item.skills.map((skill) => (
-                <span class="flex items-center gap-1 text-sm bg-gray-100 text-gray-900 px-3 py-1.5 rounded-lg font-medium border border-gray-300">
-                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                  </svg>
-                  {skill}
-                </span>
-              ))}
             </div>
-          </div>
+          ))}
         </div>
       </div>
-    ))}
-  </div>
+
+      <div class="border-t hairline pt-12">
+        <p class="editorial-meta mb-8">{t("work.skillsDeveloped")}</p>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3 max-w-4xl">
+          {item.skills.map((skill, i) => (
+            <li class="flex gap-4 text-paper-muted">
+              <span class="font-mono text-xs text-paper-dim pt-1 select-none" aria-hidden="true">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <span>{skill}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </article>
+  ))}
 </section>

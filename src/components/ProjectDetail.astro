@@ -1,0 +1,196 @@
+---
+import { t } from "i18next";
+import type { Project } from "../data/projects";
+
+interface Props {
+  project: Project;
+  locale: "es" | "en";
+  next?: Project;
+  backHref: string;
+  nextHrefPrefix: string;
+}
+
+const { project, locale, next, backHref, nextHrefPrefix } = Astro.props;
+---
+
+<section class="border-b hairline">
+  <div class="max-w-[1600px] mx-auto px-6 lg:px-12 pt-12 md:pt-16 pb-4">
+    <a
+      href={backHref}
+      class="editorial-meta text-paper-muted hover:text-paper transition-colors inline-flex items-center gap-2"
+    >
+      <span aria-hidden="true">←</span> {t("projects.backToIndex")}
+    </a>
+  </div>
+
+  <div class="max-w-[1600px] mx-auto px-6 lg:px-12 pt-12 pb-20 md:pt-16 md:pb-24">
+    <p class="editorial-meta mb-10">
+      {project.index} — {project.year}
+    </p>
+    <h1 class="editorial-display text-[2.5rem] sm:text-[4rem] md:text-[6.5rem] lg:text-[8rem] text-paper text-balance mb-12">
+      {project.title}
+    </h1>
+    <p class="text-paper-muted text-xl md:text-2xl leading-snug max-w-4xl text-pretty">
+      {project.tagline[locale]}
+    </p>
+  </div>
+</section>
+
+<section class="border-b hairline">
+  <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-0">
+    <div class="aspect-[16/10] bg-ink-raised overflow-hidden">
+      <img
+        src={project.cover}
+        alt={project.title}
+        class="w-full h-full object-contain"
+        loading="eager"
+        decoding="async"
+      />
+    </div>
+  </div>
+</section>
+
+<section class="border-b hairline">
+  <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
+    <dl class="grid grid-cols-1 md:grid-cols-12 gap-x-12 gap-y-10">
+      <div class="md:col-span-3 border-t hairline pt-6">
+        <dt class="editorial-meta text-paper-dim mb-3">{t("projects.client")}</dt>
+        <dd class="text-paper leading-snug">{project.client[locale]}</dd>
+      </div>
+      <div class="md:col-span-3 border-t hairline pt-6">
+        <dt class="editorial-meta text-paper-dim mb-3">{t("projects.role")}</dt>
+        <dd class="text-paper leading-snug">{project.role[locale]}</dd>
+      </div>
+      <div class="md:col-span-2 border-t hairline pt-6">
+        <dt class="editorial-meta text-paper-dim mb-3">{t("projects.year")}</dt>
+        <dd class="text-paper leading-snug">{project.year}</dd>
+      </div>
+      <div class="md:col-span-4 border-t hairline pt-6">
+        <dt class="editorial-meta text-paper-dim mb-3">{t("projects.status")}</dt>
+        <dd class="text-paper leading-snug">{project.status[locale]}</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<section class="border-b hairline">
+  <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+      <p class="md:col-span-2 editorial-meta">01 / {t("projects.context")}</p>
+      <p class="md:col-span-9 text-paper-muted text-lg md:text-xl leading-relaxed text-pretty max-w-3xl">
+        {project.context[locale]}
+      </p>
+    </div>
+  </div>
+</section>
+
+{project.metrics && project.metrics.length > 0 && (
+  <section class="border-b hairline bg-ink-raised">
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+        <p class="md:col-span-2 editorial-meta">02 / {t("projects.metrics")}</p>
+      </div>
+      <dl class="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-12">
+        {project.metrics.map((m) => (
+          <div class="border-t hairline pt-8">
+            <dt class="editorial-display text-5xl md:text-7xl text-paper mb-4">{m.value}</dt>
+            <dd class="editorial-meta text-paper-muted">{m.label[locale]}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+)}
+
+<section class="border-b hairline">
+  <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
+      <p class="md:col-span-2 editorial-meta">{project.metrics ? '03' : '02'} / {t("projects.decisions")}</p>
+    </div>
+
+    <div class="space-y-12 md:space-y-16">
+      {project.decisions.map((d, i) => (
+        <article class="grid grid-cols-1 md:grid-cols-12 gap-8 border-t hairline pt-10">
+          <div class="md:col-span-4">
+            <p class="editorial-meta text-paper-dim mb-3">
+              {String(i + 1).padStart(2, '0')}
+            </p>
+            <h3 class="editorial-display text-2xl md:text-3xl text-paper">
+              {d.title[locale]}
+            </h3>
+          </div>
+          <p class="md:col-span-7 md:col-start-6 text-paper-muted text-lg leading-relaxed text-pretty">
+            {d.body[locale]}
+          </p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="border-b hairline bg-ink-raised">
+  <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+      <p class="md:col-span-2 editorial-meta">{project.metrics ? '04' : '03'} / {t("projects.stack")}</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+      <div class="md:col-span-10 md:col-start-3 flex flex-wrap gap-x-6 gap-y-3">
+        {project.technologies.map((tech) => (
+          <span class="font-mono text-sm text-paper">{tech}</span>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+{(project.href || project.repoHref) && (
+  <section class="border-b hairline">
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+        <p class="md:col-span-2 editorial-meta">{project.metrics ? '05' : '04'} / {t("projects.links")}</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <div class="md:col-span-10 md:col-start-3 flex flex-wrap gap-x-10 gap-y-4">
+          {project.href && (
+            <a
+              href={project.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="editorial-meta text-paper border-b border-paper hover:border-paper-muted hover:text-paper-muted pb-1 transition-colors"
+            >
+              {project.hrefLabel ? project.hrefLabel[locale] : t("projects.openLive")} ↗
+            </a>
+          )}
+          {project.repoHref && (
+            <a
+              href={project.repoHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="editorial-meta text-paper-muted hover:text-paper transition-colors"
+            >
+              {t("projects.openRepo")} ↗
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  </section>
+)}
+
+{next && (
+  <section class="border-b hairline">
+    <a
+      href={`${nextHrefPrefix}/${next.slug}`}
+      class="group block max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-32"
+    >
+      <p class="editorial-meta text-paper-dim mb-8">{t("projects.nextProject")} — {next.index}</p>
+      <h2 class="editorial-display text-4xl md:text-7xl lg:text-8xl text-paper group-hover:text-paper-muted transition-colors text-balance">
+        {next.title}
+        <span class="text-paper-dim"> →</span>
+      </h2>
+      <p class="mt-8 text-paper-muted text-lg max-w-2xl leading-relaxed text-pretty">
+        {next.tagline[locale]}
+      </p>
+    </a>
+  </section>
+)}

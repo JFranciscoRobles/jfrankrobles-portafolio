@@ -1,183 +1,159 @@
 ---
 import { t } from "i18next";
 import { localizePath } from "astro-i18next";
+import { SOCIAL_LINKS } from "../consts";
+
+const year = new Date().getFullYear();
 ---
 
-<!-- Hero Section -->
-<section class="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white py-16 md:py-24">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-      <!-- Texto de presentación -->
-      <div class="order-2 md:order-1">
-        <div class="inline-block mb-4">
-          <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold">
-            {t("home.badge")}
-          </span>
-        </div>
+<!-- Hero -->
+<section class="border-b hairline">
+  <div class="max-w-[1600px] mx-auto px-6 lg:px-12 pt-24 pb-32 md:pt-40 md:pb-48">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-end">
+      <div class="md:col-span-8">
+        <p class="editorial-meta mb-12">
+          {t("home.badge")} <span class="text-paper-dim">— {year}</span>
+        </p>
 
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+        <h1 class="editorial-display text-[2.5rem] sm:text-[3.5rem] md:text-[5rem] lg:text-[6rem] text-paper text-balance">
           {t("home.greeting")}
-          <span class="text-primary block mt-2">{t("home.name")}</span>
+          <br />
+          <span class="text-paper-muted">{t("home.name")}.</span>
         </h1>
+      </div>
 
-        <p class="mt-6 text-lg md:text-xl text-gray-600 leading-relaxed" set:html={t("home.description1")} />
-
-        <p class="mt-4 text-lg text-gray-600 leading-relaxed" set:html={t("home.description2")} />
-
-        <!-- CTAs para ambas audiencias -->
-        <div class="flex flex-wrap gap-4 mt-8">
-          <a
-            href={localizePath("/ingenieria")}
-            class="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 font-semibold transition shadow-lg hover:shadow-xl"
-          >
-            {t("home.viewEngineering")}
-          </a>
-          <a
-            href={localizePath("/negocios")}
-            class="bg-white text-gray-900 border-2 border-gray-200 px-8 py-3 rounded-lg hover:border-primary hover:text-primary font-semibold transition"
-          >
-            {t("home.viewBusiness")}
-          </a>
+      <div class="md:col-span-4 md:col-start-9">
+        <div class="border-l hairline pl-6">
+          <p class="text-paper-muted text-base leading-relaxed mb-4 text-pretty" set:html={t("home.description1")} />
+          <p class="text-paper-dim text-sm leading-relaxed text-pretty" set:html={t("home.description2")} />
         </div>
+      </div>
+    </div>
 
-        <!-- Iconos de redes sociales -->
-        <div class="flex gap-4 mt-8">
-          <a
-            href="https://www.linkedin.com/in/jfranciscorobles/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative flex items-center justify-center w-12 h-12 bg-gray-100 hover:bg-primary rounded-lg transition"
-            aria-label="LinkedIn"
-          >
-            <svg
-              class="w-5 h-5 text-gray-700 group-hover:text-white transition"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-            >
-              <path d="M16 8a6 6 0 0 1 6 6v6h-4v-6a2 2 0 0 0-4 0v6h-4v-12h4"></path>
-              <rect x="2" y="9" width="4" height="12"></rect>
-              <circle cx="4" cy="4" r="2"></circle>
-            </svg>
-          </a>
+    <div class="mt-20 md:mt-32 flex flex-wrap items-center gap-x-10 gap-y-4">
+      <a
+        href={localizePath("/ingenieria")}
+        class="editorial-meta text-paper border-b border-paper hover:border-paper-muted hover:text-paper-muted pb-1 transition-colors"
+      >
+        {t("home.viewEngineering")} →
+      </a>
+      <a
+        href={localizePath("/negocios")}
+        class="editorial-meta text-paper-muted hover:text-paper transition-colors"
+      >
+        {t("home.viewBusiness")} →
+      </a>
+      <a
+        href={localizePath("/proyectos")}
+        class="editorial-meta text-paper-muted hover:text-paper transition-colors"
+      >
+        {t("nav.projects")} →
+      </a>
+    </div>
+  </div>
+</section>
 
-          <a
-            href="https://github.com/JFranciscoRobles"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative flex items-center justify-center w-12 h-12 bg-gray-100 hover:bg-primary rounded-lg transition"
-            aria-label="GitHub"
-          >
-            <svg
-              class="w-5 h-5 text-gray-700 group-hover:text-white transition"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-            >
-              <path d="M9 19c-5 2-5-2-7-3"></path>
-              <path d="M16 22v-2.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 19.54 4.77a5.07 5.07 0 0 0-.09-3.77s-1.18-.37-3.86 1.48a13.38 13.38 0 0 0-7 0C5.91.63 4.73 1 4.73 1a5.07 5.07 0 0 0-.09 3.77A5.44 5.44 0 0 0 3 9.55c0 5.42 3.3 6.61 6.44 7a3.37 3.37 0 0 0-.94 2.58V22"></path>
-            </svg>
-          </a>
-
-          <a
-            href="mailto:josefrancisco.roblesacosta@gmail.com"
-            class="group relative flex items-center justify-center w-12 h-12 bg-gray-100 hover:bg-primary rounded-lg transition"
-            aria-label="Email"
-          >
-            <svg
-              class="w-5 h-5 text-gray-700 group-hover:text-white transition"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-            >
-              <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
-              <path d="M22 6l-10 7L2 6"></path>
-            </svg>
-          </a>
+<!-- Portrait + presentación -->
+<section class="border-b hairline bg-ink-raised">
+  <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-24 md:py-32">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-center">
+      <div class="md:col-span-5">
+        <div class="aspect-[3/4] bg-ink overflow-hidden">
+          <img
+            src="/yo.jpg"
+            alt="J. Francisco Robles"
+            width="600"
+            height="800"
+            class="w-full h-full object-cover"
+          />
         </div>
       </div>
 
-      <!-- Imagen de perfil -->
-      <div class="order-1 md:order-2 flex justify-center">
-        <div class="relative">
-          <!-- Decorative elements -->
-          <div class="absolute -inset-4 bg-primary/10 rounded-3xl transform rotate-3"></div>
-          <div class="absolute -inset-4 bg-primary/5 rounded-3xl transform -rotate-3"></div>
-
-          <!-- Imagen -->
-          <div class="relative">
-            <img
-              src="/yo.jpg"
-              alt="J. Francisco Robles - Software Architect"
-              width="400"
-              height="400"
-              class="relative rounded-2xl object-cover shadow-2xl w-full max-w-md"
-            />
-          </div>
-        </div>
+      <div class="md:col-span-6 md:col-start-7">
+        <p class="editorial-meta mb-8">Portrait — 01</p>
+        <h2 class="editorial-display text-3xl md:text-5xl text-paper mb-8 text-balance">
+          {t("home.whoIHelp")}
+        </h2>
+        <p class="text-paper-muted text-lg leading-relaxed text-pretty">
+          {t("home.forBusinessDesc")}
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Sección "¿A quién ayudo?" -->
-<section class="py-16 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-      {t("home.whoIHelp")}
-    </h2>
+<!-- Dos audiencias -->
+<section>
+  <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-24 md:py-32">
+    <p class="editorial-meta mb-16">Servicios — 02</p>
 
-    <div class="grid md:grid-cols-2 gap-8">
-      <!-- Tarjeta para Reclutadores/Empresas -->
-      <div class="group relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 border-2 border-gray-200 hover:border-primary">
-        <div class="mb-4">
-          <svg class="w-12 h-12 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-          </svg>
-        </div>
-        <h3 class="text-2xl font-bold text-gray-900 mb-3">
+    <div class="grid grid-cols-1 md:grid-cols-2">
+      <a
+        href={localizePath("/ingenieria")}
+        class="group block py-12 md:py-20 md:pr-12 border-b md:border-b-0 md:border-r hairline"
+      >
+        <p class="editorial-meta mb-6 text-paper-dim">01 / Tech</p>
+        <h3 class="editorial-display text-2xl md:text-4xl text-paper mb-6 group-hover:text-paper-muted transition-colors duration-300">
           {t("home.forRecruiters")}
         </h3>
-        <p class="text-gray-600 mb-6 leading-relaxed">
+        <p class="text-paper-muted leading-relaxed mb-8 text-pretty">
           {t("home.forRecruitersDesc")}
         </p>
-        <a
-          href={localizePath("/ingenieria")}
-          class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
-        >
+        <span class="editorial-meta text-paper inline-flex items-center gap-2 border-b border-paper pb-1 group-hover:border-paper-muted group-hover:text-paper-muted transition-colors">
           {t("home.viewProfile")}
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
+          <span aria-hidden="true">→</span>
+        </span>
+      </a>
 
-      <!-- Tarjeta para Negocios -->
-      <div class="group relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 border-2 border-gray-200 hover:border-primary">
-        <div class="mb-4">
-          <svg class="w-12 h-12 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
-          </svg>
-        </div>
-        <h3 class="text-2xl font-bold text-gray-900 mb-3">
+      <a
+        href={localizePath("/negocios")}
+        class="group block py-12 md:py-20 md:pl-12"
+      >
+        <p class="editorial-meta mb-6 text-paper-dim">02 / Business</p>
+        <h3 class="editorial-display text-2xl md:text-4xl text-paper mb-6 group-hover:text-paper-muted transition-colors duration-300">
           {t("home.forBusiness")}
         </h3>
-        <p class="text-gray-600 mb-6 leading-relaxed">
+        <p class="text-paper-muted leading-relaxed mb-8 text-pretty">
           {t("home.forBusinessDesc")}
         </p>
-        <a
-          href={localizePath("/negocios")}
-          class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
-        >
+        <span class="editorial-meta text-paper inline-flex items-center gap-2 border-b border-paper pb-1 group-hover:border-paper-muted group-hover:text-paper-muted transition-colors">
           {t("home.viewServices")}
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
+          <span aria-hidden="true">→</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact strip -->
+<section class="border-t hairline bg-ink-raised">
+  <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-24 md:py-32">
+    <p class="editorial-meta mb-8">Contacto — 03</p>
+    <a
+      href={`mailto:${SOCIAL_LINKS.email}`}
+      class="editorial-display text-3xl md:text-5xl lg:text-6xl text-paper hover:text-paper-muted transition-colors inline-block break-all"
+    >
+      {SOCIAL_LINKS.email}
+      <span class="text-paper-dim"> →</span>
+    </a>
+
+    <div class="mt-16 flex flex-wrap gap-x-8 gap-y-3">
+      <a
+        href={SOCIAL_LINKS.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="editorial-meta text-paper-muted hover:text-paper transition-colors"
+      >
+        LinkedIn ↗
+      </a>
+      <a
+        href={SOCIAL_LINKS.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="editorial-meta text-paper-muted hover:text-paper transition-colors"
+      >
+        GitHub ↗
+      </a>
     </div>
   </div>
 </section>

@@ -1,0 +1,157 @@
+---
+import Global from "../../layouts/Global.astro";
+import { SOCIAL_LINKS } from "../../consts";
+import { t, changeLanguage } from "i18next";
+import { HeadHrefLangs } from "astro-i18next/components";
+
+changeLanguage("en");
+
+const whatsappUrl = "https://wa.me/526645684580?text=Hello, I saw your portfolio and would love to chat.";
+---
+
+<Global
+  pageTitle="Contact - J. Francisco Robles"
+  description="Let's talk. Email, LinkedIn, GitHub and WhatsApp for clients and recruiters. I reply within 24 hours."
+  locale="en"
+>
+  <HeadHrefLangs slot="head" />
+
+  <section class="border-b hairline">
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 pt-24 pb-20 md:pt-32 md:pb-24">
+      <p class="editorial-meta mb-12">{t("contact.label")}</p>
+      <h1 class="editorial-display text-[2.25rem] sm:text-[3rem] md:text-[5rem] text-paper text-balance mb-12">
+        {t("contact.title")}
+      </h1>
+      <p class="text-paper-muted text-lg md:text-xl max-w-3xl leading-relaxed text-pretty">
+        {t("contact.intro")}
+      </p>
+    </div>
+  </section>
+
+  <section class="border-b hairline">
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
+        <p class="md:col-span-2 editorial-meta">02 / Email</p>
+        <p class="md:col-span-10 text-paper-muted text-lg leading-relaxed max-w-2xl">
+          {t("contact.primaryDesc")}
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <div class="md:col-span-2"></div>
+        <a
+          href={`mailto:${SOCIAL_LINKS.email}`}
+          class="md:col-span-10 editorial-display text-2xl sm:text-4xl md:text-6xl lg:text-7xl text-paper hover:text-paper-muted transition-colors inline-block break-all"
+        >
+          {SOCIAL_LINKS.email}
+          <span class="text-paper-dim"> →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b hairline bg-ink-raised">
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
+        <p class="md:col-span-2 editorial-meta">03 / {t("contact.alt")}</p>
+      </div>
+
+      <dl class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
+        <a
+          href={SOCIAL_LINKS.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group border-t hairline pt-8"
+        >
+          <p class="editorial-meta text-paper-dim mb-4">01</p>
+          <dt class="editorial-display text-2xl md:text-3xl text-paper group-hover:text-paper-muted transition-colors mb-3">
+            {t("contact.linkedin")} ↗
+          </dt>
+          <dd class="text-paper-muted leading-relaxed text-pretty mb-3">
+            {t("contact.linkedinDesc")}
+          </dd>
+          <p class="font-mono text-xs text-paper-dim">in/jfranciscorobles</p>
+        </a>
+
+        <a
+          href={SOCIAL_LINKS.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group border-t hairline pt-8"
+        >
+          <p class="editorial-meta text-paper-dim mb-4">02</p>
+          <dt class="editorial-display text-2xl md:text-3xl text-paper group-hover:text-paper-muted transition-colors mb-3">
+            {t("contact.github")} ↗
+          </dt>
+          <dd class="text-paper-muted leading-relaxed text-pretty mb-3">
+            {t("contact.githubDesc")}
+          </dd>
+          <p class="font-mono text-xs text-paper-dim">JFranciscoRobles</p>
+        </a>
+
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group border-t hairline pt-8"
+        >
+          <p class="editorial-meta text-paper-dim mb-4">03</p>
+          <dt class="editorial-display text-2xl md:text-3xl text-paper group-hover:text-paper-muted transition-colors mb-3">
+            {t("contact.whatsapp")} ↗
+          </dt>
+          <dd class="text-paper-muted leading-relaxed text-pretty mb-3">
+            {t("contact.whatsappDesc")}
+          </dd>
+          <p class="font-mono text-xs text-paper-dim">+52 664 568 4580</p>
+        </a>
+
+        <a
+          href="/cv.pdf"
+          download
+          class="group border-t hairline pt-8"
+        >
+          <p class="editorial-meta text-paper-dim mb-4">04</p>
+          <dt class="editorial-display text-2xl md:text-3xl text-paper group-hover:text-paper-muted transition-colors mb-3">
+            {t("contact.cv")} ↓
+          </dt>
+          <dd class="text-paper-muted leading-relaxed text-pretty mb-3">
+            {t("contact.cvDesc")}
+          </dd>
+          <p class="font-mono text-xs text-paper-dim">cv.pdf</p>
+        </a>
+      </dl>
+    </div>
+  </section>
+
+  <section>
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
+        <p class="md:col-span-2 editorial-meta">04 / Info</p>
+      </div>
+
+      <dl class="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-12 max-w-5xl">
+        <div class="border-t hairline pt-6">
+          <p class="editorial-meta text-paper-dim mb-3">{t("contact.location")}</p>
+          <dd class="editorial-display text-xl text-paper">{t("contact.locationValue")}</dd>
+        </div>
+        <div class="border-t hairline pt-6">
+          <p class="editorial-meta text-paper-dim mb-3">{t("contact.timezone")}</p>
+          <dd class="editorial-display text-xl text-paper">{t("contact.timezoneValue")}</dd>
+        </div>
+        <div class="border-t hairline pt-6">
+          <p class="editorial-meta text-paper-dim mb-3">{t("contact.availability")}</p>
+          <dd class="editorial-display text-xl text-paper">{t("contact.availabilityValue")}</dd>
+        </div>
+      </dl>
+
+      <div class="mt-20 flex flex-wrap gap-x-10 gap-y-4">
+        <a
+          href={`mailto:${SOCIAL_LINKS.email}?subject=Schedule a call`}
+          class="editorial-meta text-paper border-b border-paper hover:border-paper-muted hover:text-paper-muted pb-1 transition-colors"
+        >
+          {t("contact.schedule")} →
+        </a>
+      </div>
+    </div>
+  </section>
+</Global>

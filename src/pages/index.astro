@@ -2,16 +2,14 @@
 import MainContent from "../components/MainContent.astro";
 import Global from "../layouts/Global.astro";
 import { HeadHrefLangs } from "astro-i18next/components";
-import i18next, { changeLanguage } from "i18next";
+import { changeLanguage } from "i18next";
 
 changeLanguage("es");
 ---
 
-<html lang={i18next.language}>
-  <Global pageTitle={"J. Frank Robles - Arquitecto de Software"}>
-    <HeadHrefLangs slot="head" />
-    <main class="flex flex-col w-full items-center justify-center gap-0">
-      <MainContent />
-    </main>
-  </Global>
-</html>
+<Global pageTitle={"J. Frank Robles - Arquitecto de Software"} locale="es">
+  <HeadHrefLangs slot="head" />
+  <main class="flex flex-col w-full items-center justify-center gap-0">
+    <MainContent />
+  </main>
+</Global>
