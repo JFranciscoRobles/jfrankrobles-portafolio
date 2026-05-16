@@ -20,15 +20,28 @@ changeLanguage("en");
       <h1 class="editorial-display text-[2.25rem] sm:text-[3rem] md:text-[5rem] text-paper text-balance mb-12">
         {t("business.title")}
       </h1>
-      <p class="text-paper-muted text-lg md:text-xl max-w-3xl leading-relaxed text-pretty mb-12">
+      <p class="text-paper-muted text-lg md:text-xl max-w-3xl leading-relaxed text-pretty mb-8">
         {t("business.subtitle")}
       </p>
-      <a
-        href={`mailto:${SOCIAL_LINKS.email}?subject=Website consultation`}
-        class="editorial-meta text-paper border-b border-paper hover:border-paper-muted hover:text-paper-muted pb-1 transition-colors"
-      >
-        {t("business.scheduleFree")} →
-      </a>
+      <p class="font-mono text-sm text-paper-dim mb-12 border-l hairline pl-4">
+        {t("business.heroPriceTag")}
+      </p>
+      <div class="flex flex-wrap items-center gap-x-8 gap-y-4">
+        <a
+          href="https://wa.me/526645684580?text=Hello, I'm interested in learning more about web services"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="editorial-meta text-ink bg-paper border-2 border-paper px-6 py-3 hover:bg-paper-muted hover:border-paper-muted transition-colors"
+        >
+          {t("business.sendWhatsApp")} ↗
+        </a>
+        <a
+          href={`mailto:${SOCIAL_LINKS.email}?subject=Website consultation`}
+          class="editorial-meta text-paper border-b border-paper hover:border-paper-muted hover:text-paper-muted pb-1 transition-colors"
+        >
+          {t("business.scheduleFree")} →
+        </a>
+      </div>
     </div>
   </section>
 
@@ -68,17 +81,23 @@ changeLanguage("en");
 
       <div class="space-y-20">
         {[
-          { n: '01', title: 'service1Title', intro: 'service1Intro', ideal: 'service1IdealFor', features: ['service1Feature1','service1Feature2','service1Feature3','service1Feature4','service1Feature5'], ideals: ['service1Ideal1','service1Ideal2','service1Ideal3','service1Ideal4'] },
-          { n: '02', title: 'service2Title', intro: 'service2Intro', ideal: 'service2IdealFor', features: ['service2Feature1','service2Feature2','service2Feature3','service2Feature4','service2Feature5'], ideals: ['service2Ideal1','service2Ideal2','service2Ideal3'] },
-          { n: '03', title: 'service3Title', intro: 'service3Intro', ideal: 'service3IdealFor', features: ['service3Feature1','service3Feature2','service3Feature3','service3Feature4'], ideals: ['service3Ideal1','service3Ideal2','service3Ideal3'] },
-          { n: '04', title: 'service4Title', intro: null, ideal: null, features: ['service4Feature1','service4Feature2','service4Feature3','service4Feature4'], ideals: [] },
+          { n: '01', title: 'service1Title', price: 'service1Price', duration: 'service1Duration', intro: 'service1Intro', ideal: 'service1IdealFor', features: ['service1Feature1','service1Feature2','service1Feature3','service1Feature4','service1Feature5'], ideals: ['service1Ideal1','service1Ideal2','service1Ideal3','service1Ideal4'] },
+          { n: '02', title: 'service2Title', price: 'service2Price', duration: 'service2Duration', intro: 'service2Intro', ideal: 'service2IdealFor', features: ['service2Feature1','service2Feature2','service2Feature3','service2Feature4','service2Feature5'], ideals: ['service2Ideal1','service2Ideal2','service2Ideal3'] },
+          { n: '03', title: 'service3Title', price: 'service3Price', duration: 'service3Duration', intro: 'service3Intro', ideal: 'service3IdealFor', features: ['service3Feature1','service3Feature2','service3Feature3','service3Feature4'], ideals: ['service3Ideal1','service3Ideal2','service3Ideal3'] },
+          { n: '04', title: 'service4Title', price: 'service4Price', duration: 'service4Duration', intro: null, ideal: null, features: ['service4Feature1','service4Feature2','service4Feature3','service4Feature4'], ideals: [] },
         ].map((s) => (
           <article class="border-t hairline pt-12">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-10">
               <p class="md:col-span-2 editorial-meta text-paper-dim">{s.n}</p>
-              <h3 class="md:col-span-10 editorial-display text-2xl md:text-4xl text-paper">
-                {t(`business.${s.title}`)}
-              </h3>
+              <div class="md:col-span-10">
+                <h3 class="editorial-display text-2xl md:text-4xl text-paper mb-4">
+                  {t(`business.${s.title}`)}
+                </h3>
+                <div class="flex flex-wrap gap-x-6 gap-y-2 font-mono text-sm">
+                  <span class="text-paper">{t(`business.${s.price}`)}</span>
+                  <span class="text-paper-dim">— {t(`business.${s.duration}`)}</span>
+                </div>
+              </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
@@ -119,8 +138,40 @@ changeLanguage("en");
 
   <section class="border-b hairline">
     <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+        <p class="md:col-span-2 editorial-meta">04 / Case</p>
+        <h2 class="md:col-span-10 editorial-display text-3xl md:text-5xl text-paper text-balance">
+          {t("business.caseStudy")}
+        </h2>
+      </div>
+
+      <article class="grid grid-cols-1 md:grid-cols-12 gap-8 border-t hairline pt-12 max-w-5xl">
+        <div class="md:col-span-4">
+          <p class="editorial-meta text-paper-dim mb-3">Client</p>
+          <h3 class="editorial-display text-2xl md:text-3xl text-paper">{t("business.caseStudyTitle")}</h3>
+        </div>
+        <div class="md:col-span-7 md:col-start-6 space-y-6">
+          <div>
+            <p class="editorial-meta text-paper-dim mb-2">Before</p>
+            <p class="text-paper-muted text-lg leading-relaxed text-pretty">{t("business.caseStudyBefore")}</p>
+          </div>
+          <div>
+            <p class="editorial-meta text-paper-dim mb-2">After</p>
+            <p class="text-paper-muted text-lg leading-relaxed text-pretty">{t("business.caseStudyAfter")}</p>
+          </div>
+          <div class="border-t hairline pt-6">
+            <p class="editorial-meta text-paper-dim mb-2">Result</p>
+            <p class="text-paper text-lg leading-relaxed text-pretty">{t("business.caseStudyResult")}</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="border-b hairline bg-ink-raised">
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
-        <p class="md:col-span-2 editorial-meta">04 / Process</p>
+        <p class="md:col-span-2 editorial-meta">05 / Process</p>
         <h2 class="md:col-span-10 editorial-display text-3xl md:text-5xl text-paper text-balance">
           {t("business.process")}
         </h2>
@@ -199,10 +250,10 @@ changeLanguage("en");
     </div>
   </section>
 
-  <section class="border-b hairline bg-ink-raised">
+  <section class="border-b hairline">
     <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
-        <p class="md:col-span-2 editorial-meta">05 / Benefits</p>
+        <p class="md:col-span-2 editorial-meta">06 / Benefits</p>
         <h2 class="md:col-span-10 editorial-display text-3xl md:text-5xl text-paper text-balance">
           {t("business.benefits")}
         </h2>
@@ -220,10 +271,10 @@ changeLanguage("en");
     </div>
   </section>
 
-  <section class="border-b hairline">
+  <section class="border-b hairline bg-ink-raised">
     <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
-        <p class="md:col-span-2 editorial-meta">06 / FAQ</p>
+        <p class="md:col-span-2 editorial-meta">07 / FAQ</p>
         <h2 class="md:col-span-10 editorial-display text-3xl md:text-5xl text-paper text-balance">
           {t("business.faq")}
         </h2>
@@ -245,38 +296,6 @@ changeLanguage("en");
     </div>
   </section>
 
-  <section class="border-b hairline bg-ink-raised">
-    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
-        <p class="md:col-span-2 editorial-meta">07 / Case</p>
-        <h2 class="md:col-span-10 editorial-display text-3xl md:text-5xl text-paper text-balance">
-          {t("business.caseStudy")}
-        </h2>
-      </div>
-
-      <article class="grid grid-cols-1 md:grid-cols-12 gap-8 border-t hairline pt-12 max-w-5xl">
-        <div class="md:col-span-4">
-          <p class="editorial-meta text-paper-dim mb-3">Client</p>
-          <h3 class="editorial-display text-2xl md:text-3xl text-paper">{t("business.caseStudyTitle")}</h3>
-        </div>
-        <div class="md:col-span-7 md:col-start-6 space-y-6">
-          <div>
-            <p class="editorial-meta text-paper-dim mb-2">Before</p>
-            <p class="text-paper-muted text-lg leading-relaxed text-pretty">{t("business.caseStudyBefore")}</p>
-          </div>
-          <div>
-            <p class="editorial-meta text-paper-dim mb-2">After</p>
-            <p class="text-paper-muted text-lg leading-relaxed text-pretty">{t("business.caseStudyAfter")}</p>
-          </div>
-          <div class="border-t hairline pt-6">
-            <p class="editorial-meta text-paper-dim mb-2">Result</p>
-            <p class="text-paper text-lg leading-relaxed text-pretty">{t("business.caseStudyResult")}</p>
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
-
   <section class="border-b hairline">
     <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-24 md:py-32">
       <p class="editorial-meta mb-8">08 / {t("business.cta")}</p>
@@ -295,20 +314,20 @@ changeLanguage("en");
         <span class="text-paper-dim"> →</span>
       </a>
 
-      <div class="flex flex-wrap gap-x-10 gap-y-4">
+      <div class="flex flex-wrap items-center gap-x-8 gap-y-4">
+        <a
+          href="https://wa.me/526645684580?text=Hello, I'm interested in learning more about web services"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="editorial-meta text-ink bg-paper border-2 border-paper px-6 py-3 hover:bg-paper-muted hover:border-paper-muted transition-colors"
+        >
+          {t("business.sendWhatsApp")} ↗
+        </a>
         <a
           href={`mailto:${SOCIAL_LINKS.email}?subject=Website consultation`}
           class="editorial-meta text-paper border-b border-paper hover:border-paper-muted hover:text-paper-muted pb-1 transition-colors"
         >
           {t("business.scheduleCall")} →
-        </a>
-        <a
-          href="https://wa.me/526645684580?text=Hello, I'm interested in learning more about web services"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="editorial-meta text-paper-muted hover:text-paper transition-colors"
-        >
-          {t("business.sendWhatsApp")} ↗
         </a>
       </div>
     </div>
