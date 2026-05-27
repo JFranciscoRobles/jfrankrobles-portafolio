@@ -2,8 +2,25 @@
 import { t } from "i18next";
 import { localizePath } from "astro-i18next";
 import { SOCIAL_LINKS } from "../consts";
+import { projects } from "../data/projects";
 
-const year = new Date().getFullYear();
+interface Props {
+  locale?: "es" | "en";
+}
+
+const { locale = "es" } = Astro.props;
+
+const currentYear = new Date().getFullYear();
+const SITE_START_YEAR = 2024;
+const yearLabel =
+  currentYear > SITE_START_YEAR
+    ? `© ${SITE_START_YEAR}–${currentYear}`
+    : `© ${SITE_START_YEAR}`;
+
+const featuredSlugs = ["zeitap", "probien-crm", "probien-catalogo"];
+const featuredProjects = featuredSlugs
+  .map((slug) => projects.find((p) => p.slug === slug))
+  .filter((p): p is NonNullable<typeof p> => Boolean(p));
 ---
 
 <!-- Hero -->
@@ -12,7 +29,7 @@ const year = new Date().getFullYear();
     <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-end">
       <div class="md:col-span-8">
         <p class="editorial-meta mb-12">
-          {t("home.badge")} <span class="text-paper-dim">— {year}</span>
+          {t("home.badge")} <span class="text-paper-dim">— {yearLabel}</span>
         </p>
 
         <h1 class="editorial-display text-[2.5rem] sm:text-[3.5rem] md:text-[5rem] lg:text-[6rem] text-paper text-balance">
@@ -75,9 +92,79 @@ const year = new Date().getFullYear();
           {t("home.whoIHelp")}
         </h2>
         <p class="text-paper-muted text-lg leading-relaxed text-pretty">
-          {t("home.forBusinessDesc")}
+          {t("home.whoIHelpLead")}
         </p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Selected work -->
+<section class="border-b hairline">
+  <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-24 md:py-32">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16 md:mb-20 items-end">
+      <div class="md:col-span-7">
+        <p class="editorial-meta mb-6">Selected — 02</p>
+        <h2 class="editorial-display text-3xl md:text-5xl text-paper text-balance">
+          {t("home.selectedWork")}
+        </h2>
+      </div>
+      <div class="md:col-span-4 md:col-start-9">
+        <p class="text-paper-muted leading-relaxed text-pretty">
+          {t("home.selectedWorkDesc")}
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-line">
+      {featuredProjects.map((project) => (
+        <a
+          href={localizePath(`/proyectos/${project.slug}`)}
+          class="group block bg-ink p-6 md:p-8 hover:bg-ink-raised transition-colors"
+        >
+          <div class="aspect-[4/3] bg-ink-raised overflow-hidden mb-6 border hairline">
+            <img
+              src={project.cover}
+              alt={project.title}
+              width="800"
+              height="600"
+              loading="lazy"
+              class="w-full h-full object-cover group-hover:opacity-90 transition-opacity"
+            />
+          </div>
+          <p class="editorial-meta text-paper-dim mb-3">
+            {project.index} / {project.year}
+          </p>
+          <h3 class="editorial-display text-xl md:text-2xl text-paper mb-3 group-hover:text-paper-muted transition-colors">
+            {project.title}
+          </h3>
+          <p class="text-paper-muted text-sm leading-relaxed mb-6 text-pretty">
+            {project.tagline[locale]}
+          </p>
+          {project.metrics && project.metrics.length > 0 && (
+            <dl class="flex flex-wrap gap-x-6 gap-y-3 border-t hairline pt-5">
+              {project.metrics.slice(0, 2).map((metric) => (
+                <div>
+                  <dt class="editorial-meta text-paper-dim mb-1">
+                    {metric.label[locale]}
+                  </dt>
+                  <dd class="text-paper text-base">{metric.value}</dd>
+                </div>
+              ))}
+            </dl>
+          )}
+        </a>
+      ))}
+    </div>
+
+    <div class="mt-16 md:mt-20">
+      <a
+        href={localizePath("/proyectos")}
+        class="editorial-meta text-paper border-b border-paper hover:border-paper-muted hover:text-paper-muted pb-1 transition-colors inline-flex items-center gap-2"
+      >
+        {t("home.viewAllProjects")}
+        <span aria-hidden="true">→</span>
+      </a>
     </div>
   </div>
 </section>
@@ -85,7 +172,7 @@ const year = new Date().getFullYear();
 <!-- Dos audiencias -->
 <section>
   <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-24 md:py-32">
-    <p class="editorial-meta mb-16">Servicios — 02</p>
+    <p class="editorial-meta mb-16">Servicios — 03</p>
 
     <div class="grid grid-cols-1 md:grid-cols-2">
       <a
@@ -128,7 +215,7 @@ const year = new Date().getFullYear();
 <!-- Contact strip -->
 <section class="border-t hairline bg-ink-raised">
   <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-24 md:py-32">
-    <p class="editorial-meta mb-8">Contacto — 03</p>
+    <p class="editorial-meta mb-8">Contacto — 04</p>
     <a
       href={`mailto:${SOCIAL_LINKS.email}`}
       class="editorial-display text-3xl md:text-5xl lg:text-6xl text-paper hover:text-paper-muted transition-colors inline-block break-all"

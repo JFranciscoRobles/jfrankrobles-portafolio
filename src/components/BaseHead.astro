@@ -65,17 +65,21 @@ const schemaOrgWebPage = {
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-<!-- Theme: applied before paint to avoid flash -->
+<!-- Theme: applied before paint to avoid flash, and re-applied after View Transition swaps -->
 <script is:inline>
   (function () {
-    try {
-      var stored = localStorage.getItem('theme');
-      var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-      var theme = stored || (prefersLight ? 'light' : 'dark');
-      document.documentElement.setAttribute('data-theme', theme);
-    } catch (e) {
-      document.documentElement.setAttribute('data-theme', 'dark');
+    function applyTheme() {
+      try {
+        var stored = localStorage.getItem('theme');
+        var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+        var theme = stored || (prefersLight ? 'light' : 'dark');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
     }
+    applyTheme();
+    document.addEventListener('astro:after-swap', applyTheme);
   })();
 </script>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

@@ -147,25 +147,38 @@ import { t } from "i18next";
 </style>
 
 <script>
-  const menuButton = document.getElementById("mobile-menu-button");
-  const menu = document.getElementById("mobile-menu");
+  function bindHeader() {
+    const menuButton = document.getElementById("mobile-menu-button");
+    const menu = document.getElementById("mobile-menu");
 
-  menuButton?.addEventListener("click", () => {
-    const expanded = menuButton.getAttribute("aria-expanded") === "true";
-    menuButton.setAttribute("aria-expanded", String(!expanded));
-    menu?.classList.toggle("hidden");
-  });
+    if (menuButton && !menuButton.dataset.bound) {
+      menuButton.dataset.bound = "true";
+      menuButton.addEventListener("click", () => {
+        const expanded = menuButton.getAttribute("aria-expanded") === "true";
+        menuButton.setAttribute("aria-expanded", String(!expanded));
+        menu?.classList.toggle("hidden");
+      });
+    }
 
-  document.querySelectorAll<HTMLButtonElement>("[data-theme-toggle]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const current = document.documentElement.getAttribute("data-theme") ?? "dark";
-      const next = current === "dark" ? "light" : "dark";
-      document.documentElement.setAttribute("data-theme", next);
-      try {
-        localStorage.setItem("theme", next);
-      } catch (e) {
-        /* ignore */
-      }
-    });
-  });
+    document
+      .querySelectorAll<HTMLButtonElement>("[data-theme-toggle]")
+      .forEach((btn) => {
+        if (btn.dataset.bound) return;
+        btn.dataset.bound = "true";
+        btn.addEventListener("click", () => {
+          const current =
+            document.documentElement.getAttribute("data-theme") ?? "dark";
+          const next = current === "dark" ? "light" : "dark";
+          document.documentElement.setAttribute("data-theme", next);
+          try {
+            localStorage.setItem("theme", next);
+          } catch (e) {
+            /* ignore */
+          }
+        });
+      });
+  }
+
+  bindHeader();
+  document.addEventListener("astro:page-load", bindHeader);
 </script>
