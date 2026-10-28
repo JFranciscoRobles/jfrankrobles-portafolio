@@ -13,6 +13,12 @@ export default defineConfig({
       changefreq: 'weekly',
       priority: 0.7,
       lastmod: new Date(),
+      // Match the canonical URLs, which drop the trailing slash.
+      serialize: (item) => {
+        const url = new URL(item.url);
+        url.pathname = url.pathname.replace(/(.)\/$/, '$1');
+        return { ...item, url: url.toString() };
+      },
     }),
   ],
 

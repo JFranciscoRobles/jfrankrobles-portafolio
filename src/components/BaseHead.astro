@@ -15,7 +15,8 @@ interface Props {
   locale?: string;
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+// Without trailing slash so it matches the hreflang alternates and the sitemap.
+const canonicalURL = new URL(Astro.url.pathname.replace(/(.)\/$/, "$1"), Astro.site);
 
 const {
   title,
@@ -119,7 +120,7 @@ const schemaOrgWebPage = {
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={type} />
-<meta property="og:url" content={Astro.url} />
+<meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, Astro.url)} />

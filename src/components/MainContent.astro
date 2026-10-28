@@ -96,7 +96,7 @@ const featuredProjects = featuredSlugs
     <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-line">
       {featuredProjects.map((project) => (
         <a
-          href={localizePath(`/proyectos/${project.slug}`)}
+          href={`${localizePath("/proyectos")}/${project.slug}`}
           class="group block bg-ink p-6 md:p-8 hover:bg-ink-raised transition-colors"
         >
           <div class="aspect-[4/3] bg-ink-raised overflow-hidden mb-6 border hairline">

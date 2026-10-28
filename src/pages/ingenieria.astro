@@ -100,7 +100,7 @@ changeLanguage("es");
           <div class="space-y-12">
             {[2, 3].map((n) => (
               <a
-                href={localizePath(`/proyectos/${t(`engineering.project${n}Slug`)}`)}
+                href={`${localizePath("/proyectos")}/${t(`engineering.project${n}Slug`)}`}
                 class="group grid grid-cols-1 md:grid-cols-12 gap-8 border-t hairline pt-8"
               >
                 <div class="md:col-span-12">
@@ -140,7 +140,7 @@ changeLanguage("es");
         <div class="space-y-12">
             {[1].map((n) => (
               <a
-                href={localizePath(`/proyectos/${t(`engineering.project${n}Slug`)}`)}
+                href={`${localizePath("/proyectos")}/${t(`engineering.project${n}Slug`)}`}
                 class="group grid grid-cols-1 md:grid-cols-12 gap-8 border-t hairline pt-8"
               >
                 <div class="md:col-span-12">
