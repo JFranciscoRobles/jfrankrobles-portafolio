@@ -9,16 +9,28 @@ const yearRange =
   currentYear > SITE_START_YEAR
     ? `${SITE_START_YEAR}–${currentYear}`
     : `${SITE_START_YEAR}`;
+
+// Persist per language: a shared name would keep the previous language's text after switching.
+const lang = /^\/en(\/|$)/.test(Astro.url.pathname) ? "en" : "es";
+
+const footerLinks = [
+  { href: "/", label: "nav.home" },
+  { href: "/proyectos", label: "nav.projects" },
+  { href: "/ingenieria", label: "nav.engineering" },
+  { href: "/negocios", label: "nav.business" },
+  { href: "/sobre-mi", label: "nav.about" },
+  { href: "/contacto", label: "nav.contact" },
+];
 ---
 
-<footer class="bg-ink border-t hairline mt-32" transition:persist="site-footer">
-  <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20">
+<footer class="bg-ink border-t hairline" transition:persist={`site-footer-${lang}`}>
+  <div class="max-w-6xl mx-auto px-6 lg:px-12 py-14">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
       <div class="md:col-span-5">
         <p class="editorial-meta mb-4">{t("footer.contact")}</p>
         <a
           href={`mailto:${SOCIAL_LINKS.email}`}
-          class="editorial-display text-2xl md:text-4xl text-paper hover:text-paper-muted transition-colors break-all"
+          class="text-lg text-paper hover:text-paper-muted transition-colors break-all"
         >
           {SOCIAL_LINKS.email}
           <span class="text-paper-dim"> →</span>
@@ -28,26 +40,13 @@ const yearRange =
       <div class="md:col-span-3 md:col-start-7">
         <p class="editorial-meta mb-4">{t("footer.navigation")}</p>
         <ul class="space-y-2">
-          <li>
-            <a href={localizePath("/")} class="text-paper hover:text-paper-muted transition-colors">
-              {t("nav.home")}
-            </a>
-          </li>
-          <li>
-            <a href={localizePath("/ingenieria")} class="text-paper hover:text-paper-muted transition-colors">
-              {t("nav.engineering")}
-            </a>
-          </li>
-          <li>
-            <a href={localizePath("/negocios")} class="text-paper hover:text-paper-muted transition-colors">
-              {t("nav.business")}
-            </a>
-          </li>
-          <li>
-            <a href={localizePath("/proyectos")} class="text-paper hover:text-paper-muted transition-colors">
-              {t("nav.projects")}
-            </a>
-          </li>
+          {footerLinks.map((link) => (
+            <li>
+              <a href={localizePath(link.href)} class="text-paper hover:text-paper-muted transition-colors">
+                {t(link.label)}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
 
@@ -78,7 +77,7 @@ const yearRange =
       </div>
     </div>
 
-    <div class="border-t hairline mt-16 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+    <div class="border-t hairline mt-12 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
       <p class="editorial-meta">
         © {yearRange} — {SITE_AUTHOR}
       </p>

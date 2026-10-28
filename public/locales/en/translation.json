@@ -3,9 +3,11 @@
     "home": "Home",
     "about": "About",
     "projects": "Projects",
-    "engineering": "Engineering",
-    "business": "Business",
-    "contact": "Contact"
+    "engineering": "Tech profile",
+    "business": "Services",
+    "contact": "Contact",
+    "themeToDark": "Dark mode",
+    "themeToLight": "Light mode"
   },
   "home": {
     "badge": "Tech Lead / Full-Stack Engineer",
@@ -24,8 +26,11 @@
     "viewProfile": "View technical profile",
     "viewServices": "View services",
     "selectedWork": "Selected work",
-    "selectedWorkDesc": "Three production projects that show how I work with real data, real teams and real deadlines.",
-    "viewAllProjects": "View all projects"
+    "selectedWorkDesc": "Three projects that show how I work with real data, real users and real deadlines.",
+    "viewAllProjects": "View all projects",
+    "servicesTitle": "How can I help?",
+    "contactTitle": "Let's work together",
+    "contactDesc": "Tell me what you need: a project, a role or an idea."
   },
   "engineering": {
     "title": "Tech Lead / Full-Stack Engineer",
@@ -37,7 +42,7 @@
     "expertIn": "Expert in:",
     "expertise1": "Software architecture and distributed systems design",
     "expertise2": "Full-stack development with modern JavaScript/TypeScript stack",
-    "expertise3": "Implementation of advanced search systems (Elasticsearch, MeiliSearch)",
+    "expertise3": "Implementation of advanced search systems (Meilisearch, Elasticsearch)",
     "expertise4": "REST and GraphQL API design and integration",
     "expertise5": "Performance optimization and scalability",
     "expertise6": "Technical leadership and architectural decision-making",
@@ -63,7 +68,7 @@
     "project3Title": "Probien Catalog — Public portal",
     "project3Desc": "SEO-first portal with self-hosted Meilisearch, per-listing static generation and Payload CMS so the team can edit content without touching code. Replaced reliance on generic real estate portals.",
     "project3Stack": "Stack: Next.js, Payload CMS, Meilisearch, InstantSearch.js, Vercel",
-    "project3Result": "Result: 300+ indexed listings, 40+ agents on platform, green Core Web Vitals",
+    "project3Result": "Result: 400+ listings, 500+ static pages, green Core Web Vitals",
     "skillsDeveloped": "Skills Developed:",
     "skill1": "Software architecture and design patterns",
     "skill2": "Scalable REST API design",
@@ -98,7 +103,8 @@
     "collaboration": "Collaboration and communication",
     "collaborationDesc": "Experience working with multidisciplinary teams and communicating technical decisions to non-technical stakeholders.",
     "contactTitle": "Professional Contact",
-    "scheduleCall": "Schedule technical call"
+    "scheduleCall": "Schedule technical call",
+    "otherProjects": "Other projects"
   },
   "business": {
     "title": "Web Solutions to Grow Your Business",
@@ -159,7 +165,7 @@
     "caseStudy": "Success Stories",
     "caseStudyTitle": "Probien - Real Estate Portal",
     "caseStudyBefore": "Before: An old, slow WordPress site that was painful to maintain",
-    "caseStudyAfter": "After: Professional portal with 500+ listings, advanced search and a dashboard so the team updates content without touching code",
+    "caseStudyAfter": "After: Professional portal with 400+ listings, advanced search and a dashboard so the team updates content without touching code",
     "caseStudyResult": "Result: Up to 5× faster site rebuilt on Next.js, green Core Web Vitals and better Google indexing",
     "cta": "Let's Get Started",
     "ctaTitle": "Schedule a 30-minute call with no commitment",
@@ -233,13 +239,13 @@
     "title": "About Me",
     "intro1": "I'm Francisco, a full-stack engineer with <strong>5+ years shipping systems to production</strong> in the JavaScript ecosystem. My passion is transforming complex ideas into elegant and functional web solutions.",
     "intro2": "I started my career in web development exploring different technologies until I found my specialization in <strong>React, Next.js, and Node.js</strong>. Throughout these years, I've had the opportunity to work on challenging projects that have allowed me to grow both technically and professionally.",
-    "intro3": "I currently work at <strong>Probien Bienes Exclusivos</strong>, where I develop custom CRM systems and e-commerce platforms for the real estate sector. My work includes everything from designing scalable architectures to implementing complex search functionalities with Meilisearch and Elasticsearch.",
+    "intro3": "I currently work at <strong>Probien Bienes Exclusivos</strong>, where I built the in-house CRM that replaced Salesforce and the public property portal, with Meilisearch-powered search. I also build SaaS products such as <strong>Zeitap</strong>, <strong>MyTableCoupon</strong> and <strong>Regimen Suite</strong>, and open source projects such as <strong>Rebodocs</strong> and <strong>ReboFiles</strong>.",
     "intro4": "What I enjoy most about development is the problem-solving process: understanding requirements, designing the most efficient solution, and writing clean code that other developers can easily maintain. I firmly believe that code should be both functional and readable.",
     "whatIDo": "What I Do",
     "frontend": "Frontend Development",
     "frontendDesc": "I create modern and responsive user interfaces with React, Next.js, and Astro, prioritizing user experience and performance.",
     "backend": "Backend Development",
-    "backendDesc": "I design and implement scalable REST APIs with Node.js and Express, integrating databases like PostgreSQL and Supabase.",
+    "backendDesc": "I design and build APIs with NestJS and Node.js on PostgreSQL and Prisma, and Python services (FastAPI) when the problem calls for it.",
     "search": "Search Systems",
     "searchDesc": "I implement advanced search solutions with Meilisearch and Elasticsearch to enhance user experience.",
     "architecture": "Web Architecture",
@@ -265,10 +271,10 @@
     "location": "Tijuana, Mexico",
     "description": "Company specialized in luxury real estate",
     "featuredProjects": "Featured Projects:",
-    "project1Title": "Real Estate E-commerce Platform",
-    "project1Desc": "Designed and developed from scratch a complete property catalog platform with advanced search system, dynamic filters, and multiple categories.",
+    "project1Title": "Public property portal",
+    "project1Desc": "Designed and built the public property catalog from scratch, with advanced search, dynamic filters and an SEO-optimized page for every listing.",
     "project2Title": "Custom CRM System",
-    "project2Desc": "Created a comprehensive client and property management system specifically tailored to the real estate sector's needs, with lead management and sales tracking.",
+    "project2Desc": "Built the in-house CRM that replaced Salesforce: properties, contacts, opportunities, payments and an internal Drive, with web, mobile app and role-based permissions.",
     "project3Title": "Search Optimization",
     "project3Desc": "Implemented and optimized a search engine that significantly improved user experience when searching for properties with complex criteria.",
     "skillsDeveloped": "Skills Developed:",
@@ -277,7 +283,8 @@
     "skill3": "Performance optimization",
     "skill4": "Database management",
     "skill5": "Search systems implementation",
-    "skill6": "Deploy and CI/CD"
+    "skill6": "Deploy and CI/CD",
+    "label": "Experience"
   },
   "projects": {
     "title": "Projects",
@@ -364,7 +371,8 @@
           "Responsive design and SEO optimized."
         ]
       }
-    }
+    },
+    "countLabel": "projects"
   },
   "technologies": {
     "title": "My Tech Stack",

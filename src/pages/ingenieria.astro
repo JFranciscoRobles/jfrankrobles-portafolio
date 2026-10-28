@@ -16,19 +16,18 @@ changeLanguage("es");
   <HeadHrefLangs slot="head" />
 
   <section class="border-b hairline">
-    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 pt-24 pb-20 md:pt-32 md:pb-24">
-      <p class="editorial-meta mb-12">Ingeniería — 01</p>
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 pt-16 pb-14 md:pt-24 md:pb-20">
       <h1 class="editorial-display text-[2.25rem] sm:text-[3rem] md:text-[5rem] text-paper text-balance mb-12">
         {t("engineering.title")}
       </h1>
       <p class="text-paper-muted text-lg md:text-xl max-w-3xl leading-relaxed text-pretty mb-12">
         {t("engineering.subtitle")}
       </p>
-      <div class="flex flex-wrap gap-x-10 gap-y-4">
+      <div class="flex flex-wrap gap-4">
         <a
           href="/JFrancisco_Robles_CV_ES.pdf"
           download
-          class="editorial-meta text-paper border-b border-paper hover:border-paper-muted hover:text-paper-muted pb-1 transition-colors"
+          class="btn btn-primary"
         >
           {t("engineering.downloadCV")} ↓
         </a>
@@ -36,7 +35,7 @@ changeLanguage("es");
           href={SOCIAL_LINKS.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          class="editorial-meta text-paper-muted hover:text-paper transition-colors"
+          class="btn btn-secondary"
         >
           {t("engineering.contactLinkedIn")} ↗
         </a>
@@ -45,9 +44,9 @@ changeLanguage("es");
   </section>
 
   <section class="border-b hairline">
-    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-14 md:py-20">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
-        <p class="md:col-span-2 editorial-meta">02 / Perfil</p>
+        <p class="md:col-span-2 editorial-meta">Perfil</p>
         <h2 class="md:col-span-10 editorial-display text-3xl md:text-5xl text-paper text-balance">
           {t("engineering.profile")}
         </h2>
@@ -75,9 +74,9 @@ changeLanguage("es");
   </section>
 
   <section class="border-b hairline bg-ink-raised">
-    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-14 md:py-20">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
-        <p class="md:col-span-2 editorial-meta">03 / Experiencia</p>
+        <p class="md:col-span-2 editorial-meta">Experiencia</p>
         <h2 class="md:col-span-10 editorial-display text-3xl md:text-5xl text-paper text-balance">
           {t("engineering.experience")}
         </h2>
@@ -99,13 +98,12 @@ changeLanguage("es");
         <div class="border-t hairline pt-12 mb-16">
           <p class="editorial-meta mb-10">{t("engineering.featuredProjects")}</p>
           <div class="space-y-12">
-            {[1, 2, 3].map((n) => (
+            {[2, 3].map((n) => (
               <a
                 href={localizePath(`/proyectos/${t(`engineering.project${n}Slug`)}`)}
                 class="group grid grid-cols-1 md:grid-cols-12 gap-8 border-t hairline pt-8"
               >
-                <p class="editorial-meta md:col-span-1 text-paper-dim">0{n}</p>
-                <div class="md:col-span-11">
+                <div class="md:col-span-12">
                   <h4 class="editorial-display text-xl md:text-2xl text-paper mb-4 group-hover:text-paper-muted transition-colors">
                     {t(`engineering.project${n}Title`)}
                     <span class="text-paper-dim"> →</span>
@@ -136,13 +134,38 @@ changeLanguage("es");
           </ul>
         </div>
       </article>
+
+      <article class="border-t hairline pt-12 mt-16">
+        <p class="editorial-meta mb-10">{t("engineering.otherProjects")}</p>
+        <div class="space-y-12">
+            {[1].map((n) => (
+              <a
+                href={localizePath(`/proyectos/${t(`engineering.project${n}Slug`)}`)}
+                class="group grid grid-cols-1 md:grid-cols-12 gap-8 border-t hairline pt-8"
+              >
+                <div class="md:col-span-12">
+                  <h4 class="editorial-display text-xl md:text-2xl text-paper mb-4 group-hover:text-paper-muted transition-colors">
+                    {t(`engineering.project${n}Title`)}
+                    <span class="text-paper-dim"> →</span>
+                  </h4>
+                  <p class="text-paper-muted leading-relaxed mb-4 text-pretty max-w-3xl">{t(`engineering.project${n}Desc`)}</p>
+                  <p class="font-mono text-xs text-paper-dim mb-1">{t(`engineering.project${n}Stack`)}</p>
+                  <p class="font-mono text-xs text-paper-muted mb-4">{t(`engineering.project${n}Result`)}</p>
+                  <span class="editorial-meta text-paper border-b border-paper group-hover:border-paper-muted group-hover:text-paper-muted pb-1 transition-colors inline-block">
+                    {t("engineering.viewCaseStudy")} →
+                  </span>
+                </div>
+              </a>
+            ))}
+        </div>
+      </article>
     </div>
   </section>
 
   <section class="border-b hairline">
-    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-14 md:py-20">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
-        <p class="md:col-span-2 editorial-meta">04 / Stack</p>
+        <p class="md:col-span-2 editorial-meta">Stack</p>
         <h2 class="md:col-span-10 editorial-display text-3xl md:text-5xl text-paper text-balance">
           {t("engineering.techStack")}
         </h2>
@@ -168,9 +191,9 @@ changeLanguage("es");
   </section>
 
   <section class="border-b hairline bg-ink-raised">
-    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-14 md:py-20">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
-        <p class="md:col-span-2 editorial-meta">05 / Logros</p>
+        <p class="md:col-span-2 editorial-meta">Logros</p>
         <h2 class="md:col-span-10 editorial-display text-3xl md:text-5xl text-paper text-balance">
           {t("engineering.achievements")}
         </h2>
@@ -189,9 +212,9 @@ changeLanguage("es");
   </section>
 
   <section class="border-b hairline">
-    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-14 md:py-20">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
-        <p class="md:col-span-2 editorial-meta">06 / Enfoque</p>
+        <p class="md:col-span-2 editorial-meta">Enfoque</p>
         <h2 class="md:col-span-10 editorial-display text-3xl md:text-5xl text-paper text-balance">
           {t("engineering.approach")}
         </h2>
@@ -214,8 +237,8 @@ changeLanguage("es");
   </section>
 
   <section>
-    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-24 md:py-32">
-      <p class="editorial-meta mb-8">07 / Contacto</p>
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-16 md:py-24">
+      <p class="editorial-meta mb-8">Contacto</p>
       <h2 class="editorial-display text-3xl md:text-6xl text-paper mb-12 text-balance max-w-4xl">
         {t("engineering.contactTitle")}
       </h2>
@@ -235,17 +258,17 @@ changeLanguage("es");
         </a>
       </div>
 
-      <div class="flex flex-wrap gap-x-10 gap-y-4">
+      <div class="flex flex-wrap gap-4">
         <a
           href="/JFrancisco_Robles_CV_ES.pdf"
           download
-          class="editorial-meta text-paper border-b border-paper hover:border-paper-muted hover:text-paper-muted pb-1 transition-colors"
+          class="btn btn-primary"
         >
           {t("engineering.downloadCV")} ↓
         </a>
         <a
           href={`mailto:${SOCIAL_LINKS.email}`}
-          class="editorial-meta text-paper-muted hover:text-paper transition-colors"
+          class="btn btn-secondary"
         >
           {t("engineering.scheduleCall")} →
         </a>

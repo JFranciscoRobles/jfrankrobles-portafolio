@@ -1,0 +1,91 @@
+---
+import { t } from "i18next";
+import { localizePath } from "astro-i18next";
+import { getProjectsByCategory } from "../data/projects";
+
+interface Props {
+  locale: "es" | "en";
+  hrefPrefix: string;
+}
+
+const { locale, hrefPrefix } = Astro.props;
+
+const groups = [
+  {
+    title: t("projects.workProjects"),
+    desc: t("projects.workProjectsDesc"),
+    items: getProjectsByCategory("work"),
+    raised: false,
+  },
+  {
+    title: t("projects.personalProjects"),
+    desc: t("projects.personalProjectsDesc"),
+    items: getProjectsByCategory("personal"),
+    raised: true,
+  },
+];
+const total = groups.reduce((n, g) => n + g.items.length, 0);
+---
+
+<section class="border-b hairline">
+  <div class="max-w-6xl mx-auto px-6 lg:px-12 pt-16 pb-14 md:pt-24 md:pb-20">
+    <p class="editorial-meta mb-8">{total} {t("projects.countLabel")}</p>
+    <h1 class="editorial-display text-[2.25rem] sm:text-[3rem] md:text-[4.5rem] text-paper text-balance">
+      {t("projects.title")}
+    </h1>
+    <p class="mt-8 text-paper-muted text-lg max-w-2xl leading-relaxed text-pretty">
+      {t("projects.featuredProjectsDesc")}
+    </p>
+  </div>
+</section>
+
+{groups.map((group) => (
+  <section class:list={["border-b hairline", group.raised && "bg-ink-raised"]}>
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-14 md:py-20">
+      <div class="mb-10">
+        <h2 class="editorial-display text-2xl md:text-3xl text-paper mb-3">{group.title}</h2>
+        <p class="text-paper-muted leading-relaxed text-pretty">{group.desc}</p>
+      </div>
+
+      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+        {group.items.map((p) => (
+          <li>
+            <a href={`${hrefPrefix}/${p.slug}`} class="group block">
+              <div class="aspect-[16/10] bg-ink overflow-hidden border hairline mb-5">
+                <img
+                  src={p.cover}
+                  alt=""
+                  width="800"
+                  height="500"
+                  loading="lazy"
+                  class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-300"
+                />
+              </div>
+              <div class="flex items-baseline justify-between gap-4 mb-2">
+                <h3 class="editorial-display text-xl md:text-2xl text-paper group-hover:text-paper-muted transition-colors">
+                  {p.title}
+                </h3>
+                <span class="editorial-meta text-paper-dim shrink-0">{p.year}</span>
+              </div>
+              <p class="text-paper-muted leading-relaxed text-pretty">{p.tagline[locale]}</p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+))}
+
+<section>
+  <div class="max-w-6xl mx-auto px-6 lg:px-12 py-16 md:py-24">
+    <h2 class="editorial-display text-3xl md:text-5xl text-paper mb-6 max-w-4xl text-balance">
+      {t("projects.projectInMind")}
+    </h2>
+    <p class="text-paper-muted text-lg max-w-2xl leading-relaxed text-pretty mb-10">
+      {t("projects.projectInMindDesc")}
+    </p>
+    <a href={localizePath("/contacto")} class="btn btn-primary">
+      {t("nav.contact")} <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</section>

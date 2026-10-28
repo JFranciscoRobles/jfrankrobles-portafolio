@@ -10,14 +10,7 @@ interface Props {
 
 const { locale = "es" } = Astro.props;
 
-const currentYear = new Date().getFullYear();
-const SITE_START_YEAR = 2024;
-const yearLabel =
-  currentYear > SITE_START_YEAR
-    ? `© ${SITE_START_YEAR}–${currentYear}`
-    : `© ${SITE_START_YEAR}`;
-
-const featuredSlugs = ["zeitap", "probien-crm", "probien-catalogo"];
+const featuredSlugs = ["rebodocs", "zeitap", "probien-crm"];
 const featuredProjects = featuredSlugs
   .map((slug) => projects.find((p) => p.slug === slug))
   .filter((p): p is NonNullable<typeof p> => Boolean(p));
@@ -25,17 +18,15 @@ const featuredProjects = featuredSlugs
 
 <!-- Hero -->
 <section class="border-b hairline">
-  <div class="max-w-[1600px] mx-auto px-6 lg:px-12 pt-24 pb-32 md:pt-40 md:pb-48">
+  <div class="max-w-6xl mx-auto px-6 lg:px-12 pt-16 pb-20 md:pt-28 md:pb-28">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-end">
       <div class="md:col-span-8">
-        <p class="editorial-meta mb-12">
-          {t("home.badge")} <span class="text-paper-dim">— {yearLabel}</span>
-        </p>
+        <p class="editorial-meta mb-8">{t("home.badge")}</p>
 
         <h1 class="editorial-display text-[2.5rem] sm:text-[3.5rem] md:text-[5rem] lg:text-[6rem] text-paper text-balance">
-          {t("home.greeting")}
+          <span class="text-paper-muted">{t("home.greeting")}</span>
           <br />
-          <span class="text-paper-muted">{t("home.name")}.</span>
+          {t("home.name")}.
         </h1>
       </div>
 
@@ -47,24 +38,12 @@ const featuredProjects = featuredSlugs
       </div>
     </div>
 
-    <div class="mt-20 md:mt-32 flex flex-wrap items-center gap-x-10 gap-y-4">
-      <a
-        href={localizePath("/ingenieria")}
-        class="editorial-meta text-paper border-b border-paper hover:border-paper-muted hover:text-paper-muted pb-1 transition-colors"
-      >
-        {t("home.viewEngineering")} →
+    <div class="mt-12 md:mt-16 flex flex-wrap items-center gap-4">
+      <a href={localizePath("/proyectos")} class="btn btn-primary">
+        {t("home.viewAllProjects")} <span aria-hidden="true">→</span>
       </a>
-      <a
-        href={localizePath("/negocios")}
-        class="editorial-meta text-paper-muted hover:text-paper transition-colors"
-      >
-        {t("home.viewBusiness")} →
-      </a>
-      <a
-        href={localizePath("/proyectos")}
-        class="editorial-meta text-paper-muted hover:text-paper transition-colors"
-      >
-        {t("nav.projects")} →
+      <a href={localizePath("/contacto")} class="btn btn-secondary">
+        {t("nav.contact")}
       </a>
     </div>
   </div>
@@ -72,7 +51,7 @@ const featuredProjects = featuredSlugs
 
 <!-- Portrait + presentación -->
 <section class="border-b hairline bg-ink-raised">
-  <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-24 md:py-32">
+  <div class="max-w-6xl mx-auto px-6 lg:px-12 py-16 md:py-24">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-center">
       <div class="md:col-span-5">
         <div class="aspect-[3/4] bg-ink overflow-hidden">
@@ -87,7 +66,6 @@ const featuredProjects = featuredSlugs
       </div>
 
       <div class="md:col-span-6 md:col-start-7">
-        <p class="editorial-meta mb-8">Portrait — 01</p>
         <h2 class="editorial-display text-3xl md:text-5xl text-paper mb-8 text-balance">
           {t("home.whoIHelp")}
         </h2>
@@ -101,10 +79,9 @@ const featuredProjects = featuredSlugs
 
 <!-- Selected work -->
 <section class="border-b hairline">
-  <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-24 md:py-32">
+  <div class="max-w-6xl mx-auto px-6 lg:px-12 py-16 md:py-24">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16 md:mb-20 items-end">
       <div class="md:col-span-7">
-        <p class="editorial-meta mb-6">Selected — 02</p>
         <h2 class="editorial-display text-3xl md:text-5xl text-paper text-balance">
           {t("home.selectedWork")}
         </h2>
@@ -132,9 +109,7 @@ const featuredProjects = featuredSlugs
               class="w-full h-full object-cover group-hover:opacity-90 transition-opacity"
             />
           </div>
-          <p class="editorial-meta text-paper-dim mb-3">
-            {project.index} / {project.year}
-          </p>
+          <p class="editorial-meta text-paper-dim mb-3">{project.year}</p>
           <h3 class="editorial-display text-xl md:text-2xl text-paper mb-3 group-hover:text-paper-muted transition-colors">
             {project.title}
           </h3>
@@ -157,11 +132,8 @@ const featuredProjects = featuredSlugs
       ))}
     </div>
 
-    <div class="mt-16 md:mt-20">
-      <a
-        href={localizePath("/proyectos")}
-        class="editorial-meta text-paper border-b border-paper hover:border-paper-muted hover:text-paper-muted pb-1 transition-colors inline-flex items-center gap-2"
-      >
+    <div class="mt-12">
+      <a href={localizePath("/proyectos")} class="btn btn-secondary">
         {t("home.viewAllProjects")}
         <span aria-hidden="true">→</span>
       </a>
@@ -171,15 +143,16 @@ const featuredProjects = featuredSlugs
 
 <!-- Dos audiencias -->
 <section>
-  <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-24 md:py-32">
-    <p class="editorial-meta mb-16">Servicios — 03</p>
+  <div class="max-w-6xl mx-auto px-6 lg:px-12 py-16 md:py-24">
+    <h2 class="editorial-display text-3xl md:text-5xl text-paper mb-4 text-balance">
+      {t("home.servicesTitle")}
+    </h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2">
       <a
         href={localizePath("/ingenieria")}
-        class="group block py-12 md:py-20 md:pr-12 border-b md:border-b-0 md:border-r hairline"
+        class="group block py-10 md:py-14 md:pr-12 border-b md:border-b-0 md:border-r hairline"
       >
-        <p class="editorial-meta mb-6 text-paper-dim">01 / Tech</p>
         <h3 class="editorial-display text-2xl md:text-4xl text-paper mb-6 group-hover:text-paper-muted transition-colors duration-300">
           {t("home.forRecruiters")}
         </h3>
@@ -194,9 +167,8 @@ const featuredProjects = featuredSlugs
 
       <a
         href={localizePath("/negocios")}
-        class="group block py-12 md:py-20 md:pl-12"
+        class="group block py-10 md:py-14 md:pl-12"
       >
-        <p class="editorial-meta mb-6 text-paper-dim">02 / Business</p>
         <h3 class="editorial-display text-2xl md:text-4xl text-paper mb-6 group-hover:text-paper-muted transition-colors duration-300">
           {t("home.forBusiness")}
         </h3>
@@ -214,17 +186,22 @@ const featuredProjects = featuredSlugs
 
 <!-- Contact strip -->
 <section class="border-t hairline bg-ink-raised">
-  <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-24 md:py-32">
-    <p class="editorial-meta mb-8">Contacto — 04</p>
+  <div class="max-w-6xl mx-auto px-6 lg:px-12 py-16 md:py-24">
+    <h2 class="editorial-display text-3xl md:text-5xl text-paper mb-4 text-balance">
+      {t("home.contactTitle")}
+    </h2>
+    <p class="text-paper-muted text-lg mb-10 max-w-2xl leading-relaxed text-pretty">
+      {t("home.contactDesc")}
+    </p>
     <a
       href={`mailto:${SOCIAL_LINKS.email}`}
-      class="editorial-display text-3xl md:text-5xl lg:text-6xl text-paper hover:text-paper-muted transition-colors inline-block break-all"
+      class="editorial-display text-2xl md:text-4xl text-paper border-b border-paper hover:text-paper-muted hover:border-paper-muted transition-colors inline-block break-all pb-1"
     >
       {SOCIAL_LINKS.email}
       <span class="text-paper-dim"> →</span>
     </a>
 
-    <div class="mt-16 flex flex-wrap gap-x-8 gap-y-3">
+    <div class="mt-10 flex flex-wrap gap-x-8 gap-y-3">
       <a
         href={SOCIAL_LINKS.linkedin}
         target="_blank"

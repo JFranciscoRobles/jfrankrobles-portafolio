@@ -17,7 +17,7 @@ const work = [
   { href: "/negocios", label: t("nav.business") },
 ];
 
-const projectIndex = [{ href: "/proyectos", label: t("projects.featuredProjects") }];
+const projectIndex = [{ href: "/proyectos", label: t("projects.title") }];
 const projectList = projects.map((p) => ({
   href: `/proyectos/${p.slug}`,
   label: p.title,
@@ -43,8 +43,7 @@ const system = [
   </Fragment>
 
   <section class="border-b hairline">
-    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 pt-24 pb-20 md:pt-32 md:pb-24">
-      <p class="editorial-meta mb-12">{t("sitemap.label")}</p>
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 pt-16 pb-14 md:pt-24 md:pb-20">
       <h1 class="editorial-display text-[2.25rem] sm:text-[3rem] md:text-[5rem] text-paper text-balance mb-12">
         {t("sitemap.title")}
       </h1>
@@ -55,9 +54,9 @@ const system = [
   </section>
 
   <section class="border-b hairline">
-    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-14 md:py-20">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
-        <p class="md:col-span-2 editorial-meta">01 / {t("sitemap.main")}</p>
+        <p class="md:col-span-2 editorial-meta">{t("sitemap.main")}</p>
       </div>
       <ul class="grid grid-cols-1 md:grid-cols-12 gap-8">
         <li class="md:col-span-10 md:col-start-3">
@@ -82,9 +81,9 @@ const system = [
   </section>
 
   <section class="border-b hairline bg-ink-raised">
-    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-14 md:py-20">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
-        <p class="md:col-span-2 editorial-meta">02 / {t("sitemap.work")}</p>
+        <p class="md:col-span-2 editorial-meta">{t("sitemap.work")}</p>
       </div>
       <ul class="grid grid-cols-1 md:grid-cols-12 gap-8">
         <li class="md:col-span-10 md:col-start-3">
@@ -109,9 +108,9 @@ const system = [
   </section>
 
   <section class="border-b hairline">
-    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-14 md:py-20">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
-        <p class="md:col-span-2 editorial-meta">03 / {t("sitemap.projects")}</p>
+        <p class="md:col-span-2 editorial-meta">{t("sitemap.projects")}</p>
       </div>
       <ul class="grid grid-cols-1 md:grid-cols-12 gap-8">
         <li class="md:col-span-10 md:col-start-3">
@@ -152,9 +151,9 @@ const system = [
   </section>
 
   <section>
-    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-14 md:py-20">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
-        <p class="md:col-span-2 editorial-meta">04 / {t("sitemap.system")}</p>
+        <p class="md:col-span-2 editorial-meta">{t("sitemap.system")}</p>
       </div>
       <ul class="grid grid-cols-1 md:grid-cols-12 gap-8">
         <li class="md:col-span-10 md:col-start-3">

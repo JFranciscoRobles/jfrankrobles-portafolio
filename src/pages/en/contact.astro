@@ -17,8 +17,7 @@ const whatsappUrl = "https://wa.me/526645684580?text=Hello, I saw your portfolio
   <HeadHrefLangs slot="head" />
 
   <section class="border-b hairline">
-    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 pt-24 pb-20 md:pt-32 md:pb-24">
-      <p class="editorial-meta mb-12">{t("contact.label")}</p>
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 pt-16 pb-14 md:pt-24 md:pb-20">
       <h1 class="editorial-display text-[2.25rem] sm:text-[3rem] md:text-[5rem] text-paper text-balance mb-12">
         {t("contact.title")}
       </h1>
@@ -29,9 +28,9 @@ const whatsappUrl = "https://wa.me/526645684580?text=Hello, I saw your portfolio
   </section>
 
   <section class="border-b hairline">
-    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-14 md:py-20">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
-        <p class="md:col-span-2 editorial-meta">02 / Email</p>
+        <p class="md:col-span-2 editorial-meta">Email</p>
         <p class="md:col-span-10 text-paper-muted text-lg leading-relaxed max-w-2xl">
           {t("contact.primaryDesc")}
         </p>
@@ -51,9 +50,9 @@ const whatsappUrl = "https://wa.me/526645684580?text=Hello, I saw your portfolio
   </section>
 
   <section class="border-b hairline bg-ink-raised">
-    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-14 md:py-20">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
-        <p class="md:col-span-2 editorial-meta">03 / {t("contact.alt")}</p>
+        <p class="md:col-span-2 editorial-meta">{t("contact.alt")}</p>
       </div>
 
       <dl class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
@@ -63,7 +62,6 @@ const whatsappUrl = "https://wa.me/526645684580?text=Hello, I saw your portfolio
           rel="noopener noreferrer"
           class="group border-t hairline pt-8"
         >
-          <p class="editorial-meta text-paper-dim mb-4">01</p>
           <dt class="editorial-display text-2xl md:text-3xl text-paper group-hover:text-paper-muted transition-colors mb-3">
             {t("contact.linkedin")} ↗
           </dt>
@@ -79,7 +77,6 @@ const whatsappUrl = "https://wa.me/526645684580?text=Hello, I saw your portfolio
           rel="noopener noreferrer"
           class="group border-t hairline pt-8"
         >
-          <p class="editorial-meta text-paper-dim mb-4">02</p>
           <dt class="editorial-display text-2xl md:text-3xl text-paper group-hover:text-paper-muted transition-colors mb-3">
             {t("contact.github")} ↗
           </dt>
@@ -95,7 +92,6 @@ const whatsappUrl = "https://wa.me/526645684580?text=Hello, I saw your portfolio
           rel="noopener noreferrer"
           class="group border-t hairline pt-8"
         >
-          <p class="editorial-meta text-paper-dim mb-4">03</p>
           <dt class="editorial-display text-2xl md:text-3xl text-paper group-hover:text-paper-muted transition-colors mb-3">
             {t("contact.whatsapp")} ↗
           </dt>
@@ -110,7 +106,6 @@ const whatsappUrl = "https://wa.me/526645684580?text=Hello, I saw your portfolio
           download
           class="group border-t hairline pt-8"
         >
-          <p class="editorial-meta text-paper-dim mb-4">04</p>
           <dt class="editorial-display text-2xl md:text-3xl text-paper group-hover:text-paper-muted transition-colors mb-3">
             {t("contact.cv")} ↓
           </dt>
@@ -124,9 +119,9 @@ const whatsappUrl = "https://wa.me/526645684580?text=Hello, I saw your portfolio
   </section>
 
   <section>
-    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-14 md:py-20">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
-        <p class="md:col-span-2 editorial-meta">04 / Info</p>
+        <p class="md:col-span-2 editorial-meta">Info</p>
       </div>
 
       <dl class="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-12 max-w-5xl">
@@ -144,10 +139,10 @@ const whatsappUrl = "https://wa.me/526645684580?text=Hello, I saw your portfolio
         </div>
       </dl>
 
-      <div class="mt-20 flex flex-wrap gap-x-10 gap-y-4">
+      <div class="mt-20 flex flex-wrap gap-4">
         <a
           href={`mailto:${SOCIAL_LINKS.email}?subject=Schedule a call`}
-          class="editorial-meta text-paper border-b border-paper hover:border-paper-muted hover:text-paper-muted pb-1 transition-colors"
+          class="btn btn-primary"
         >
           {t("contact.schedule")} →
         </a>

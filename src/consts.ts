@@ -9,7 +9,7 @@ export const SITE_IMAGE = '/yo.jpg';
 export const SOCIAL_LINKS = {
   linkedin: 'https://www.linkedin.com/in/jfranciscorobles/',
   github: 'https://github.com/JFranciscoRobles',
-  email: 'josefrancisco.roblesacosta@gmail.com',
+  email: 'contacto@jfrankrobles.com',
 };
 export const KEYWORDS = [
   'Desarrollador Full-Stack',

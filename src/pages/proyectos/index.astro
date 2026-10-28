@@ -1,15 +1,10 @@
 ---
 import { changeLanguage, t } from "i18next";
 import Global from "../../layouts/Global.astro";
+import ProjectsIndex from "../../components/ProjectsIndex.astro";
 import { HeadHrefLangs } from "astro-i18next/components";
-import { getProjectsByCategory } from "../../data/projects";
 
 changeLanguage("es");
-
-const work = getProjectsByCategory("work");
-const personal = getProjectsByCategory("personal");
-const total = work.length + personal.length;
-const locale = "es" as const;
 ---
 
 <Global
@@ -19,111 +14,5 @@ const locale = "es" as const;
 >
   <HeadHrefLangs slot="head" />
 
-  <section class="border-b hairline">
-    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 pt-24 pb-20 md:pt-32 md:pb-24">
-      <p class="editorial-meta mb-12">Index — {total} works</p>
-      <h1 class="editorial-display text-[2.25rem] sm:text-[3rem] md:text-[5rem] text-paper text-balance">
-        {t("projects.featuredProjects")}
-      </h1>
-      <p class="mt-12 text-paper-muted text-lg max-w-2xl leading-relaxed text-pretty">
-        {t("projects.featuredProjectsDesc")}
-      </p>
-    </div>
-  </section>
-
-  <section>
-    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 border-b hairline pb-12 mb-12">
-        <h2 class="md:col-span-4 editorial-display text-2xl md:text-3xl text-paper">
-          {t("projects.workProjects")}
-        </h2>
-        <p class="md:col-span-7 md:col-start-6 text-paper-muted text-lg leading-relaxed text-pretty">
-          {t("projects.workProjectsDesc")}
-        </p>
-      </div>
-
-      <ul class="border-t hairline">
-        {work.map((p) => (
-          <li>
-            <a
-              href={`/proyectos/${p.slug}`}
-              class="group grid grid-cols-12 gap-4 md:gap-8 items-baseline py-8 md:py-10 border-b hairline transition-colors"
-            >
-              <span class="col-span-2 md:col-span-1 editorial-meta text-paper-dim">{p.index}</span>
-              <div class="col-span-10 md:col-span-5">
-                <h3 class="editorial-display text-2xl md:text-4xl lg:text-5xl text-paper group-hover:text-paper-muted transition-colors">
-                  {p.title}
-                </h3>
-              </div>
-              <div class="col-span-12 md:col-span-3 -mt-2 md:mt-0 text-paper-muted leading-snug text-pretty">
-                {p.tagline[locale]}
-              </div>
-              <div class="col-span-8 md:col-span-2 editorial-meta text-paper-dim">
-                {p.year}
-              </div>
-              <div class="col-span-4 md:col-span-1 editorial-meta text-paper text-right">
-                →
-              </div>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </section>
-
-  <section class="bg-ink-raised border-y hairline">
-    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 md:py-24">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 border-b hairline pb-12 mb-12">
-        <h2 class="md:col-span-4 editorial-display text-2xl md:text-3xl text-paper">
-          {t("projects.personalProjects")}
-        </h2>
-        <p class="md:col-span-7 md:col-start-6 text-paper-muted text-lg leading-relaxed text-pretty">
-          {t("projects.personalProjectsDesc")}
-        </p>
-      </div>
-
-      <ul class="border-t hairline">
-        {personal.map((p) => (
-          <li>
-            <a
-              href={`/proyectos/${p.slug}`}
-              class="group grid grid-cols-12 gap-4 md:gap-8 items-baseline py-8 md:py-10 border-b hairline transition-colors"
-            >
-              <span class="col-span-2 md:col-span-1 editorial-meta text-paper-dim">{p.index}</span>
-              <div class="col-span-10 md:col-span-5">
-                <h3 class="editorial-display text-2xl md:text-4xl lg:text-5xl text-paper group-hover:text-paper-muted transition-colors">
-                  {p.title}
-                </h3>
-              </div>
-              <div class="col-span-12 md:col-span-3 -mt-2 md:mt-0 text-paper-muted leading-snug text-pretty">
-                {p.tagline[locale]}
-              </div>
-              <div class="col-span-8 md:col-span-2 editorial-meta text-paper-dim">
-                {p.year}
-              </div>
-              <div class="col-span-4 md:col-span-1 editorial-meta text-paper text-right">
-                →
-              </div>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </section>
-
-  <section>
-    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-24 md:py-32">
-      <p class="editorial-meta mb-8">Próximo — Tu proyecto</p>
-      <a
-        href="mailto:josefrancisco.roblesacosta@gmail.com"
-        class="editorial-display text-3xl md:text-5xl text-paper hover:text-paper-muted transition-colors inline-block max-w-4xl text-balance"
-      >
-        {t("projects.projectInMind")}
-        <span class="text-paper-dim"> →</span>
-      </a>
-      <p class="mt-12 text-paper-muted text-lg max-w-2xl leading-relaxed text-pretty">
-        {t("projects.projectInMindDesc")}
-      </p>
-    </div>
-  </section>
+  <ProjectsIndex locale="es" hrefPrefix="/proyectos" />
 </Global>
